@@ -1,8 +1,8 @@
 #include <Windows.h>
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  if (message == WM_DESTROY) PostQuitMessage(0);
-  return DefWindowProc(hwnd, message, wParam, lParam);;
+  if (message == WM_CLOSE) PostQuitMessage(0);
+  return DefWindowProc(hwnd, message, wParam, lParam);
 }
 
 int main(int argc, char* argv[]) {
