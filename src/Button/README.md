@@ -1,5 +1,5 @@
-# Application
+# Button
 
-This example demonstrates the use of Gtk::Application class.
+This example demonstrates the use of Button control.
 
-![GitHub Logo](../../docs/Pictures/Application.png)
+![GitHub Logo](../../docs/Pictures/Button.png)

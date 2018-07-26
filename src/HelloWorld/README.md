@@ -1,5 +1,5 @@
-# Application
+# HelloWorld
 
-This example demonstrates the use of Gtk::Application class.
+The classic first application "Hello World".
 
-![GitHub Logo](../../docs/Pictures/Application.png)
+![GitHub Logo](../../docs/Pictures/HelloWorld.png)
