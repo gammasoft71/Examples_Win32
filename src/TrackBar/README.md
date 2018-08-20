@@ -1,5 +1,13 @@
-# Application
+# TrackBar
 
-This example demonstrates the use of Gtk::Application class.
+This example demonstrates the use of TrackBar control.
 
-![GitHub Logo](../../docs/Pictures/Application.png)
+# Source
+
+[TrackBar.cpp](./TrackBar.cpp)
+
+[CMakeLists.txt](./CMakeLists.txt)
+
+# Output
+
+![GitHub Logo](../../docs/Pictures/TrackBar.png)

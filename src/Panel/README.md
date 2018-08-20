@@ -1,5 +1,13 @@
-# Application
+# Panel
 
-This example demonstrates the use of Gtk::Application class.
+This example demonstrates the use of Panel control.
 
-![GitHub Logo](../../docs/Pictures/Application.png)
+# Source
+
+[Panel.cpp](./Panel.cpp)
+
+[CMakeLists.txt](./CMakeLists.txt)
+
+# Output
+
+![GitHub Logo](../../docs/Pictures/Panel.png)

@@ -1,5 +1,13 @@
-# Application
+# GroupBox
 
-This example demonstrates the use of Gtk::Application class.
+This example demonstrates the use of GroupBox control.
 
-![GitHub Logo](../../docs/Pictures/Application.png)
+# Source
+
+[GroupBox.cpp](./GroupBox.cpp)
+
+[CMakeLists.txt](./CMakeLists.txt)
+
+# Output
+
+![GitHub Logo](../../docs/Pictures/GroupBox.png)

@@ -1,5 +1,13 @@
-# Application
+# TabControl
 
-This example demonstrates the use of Gtk::Application class.
+This example demonstrates the use of TabControl control.
 
-![GitHub Logo](../../docs/Pictures/Application.png)
+# Source
+
+[TabControl.cpp](./TabControl.cpp)
+
+[CMakeLists.txt](./CMakeLists.txt)
+
+# Output
+
+![GitHub Logo](../../docs/Pictures/TabControl.png)

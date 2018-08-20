@@ -1,5 +1,13 @@
-# Application
+# Timer
 
-This example demonstrates the use of Gtk::Application class.
+This example demonstrates the use of Timer control.
 
-![GitHub Logo](../../docs/Pictures/Application.png)
+# Source
+
+[Timer.cpp](./Timer.cpp)
+
+[CMakeLists.txt](./CMakeLists.txt)
+
+# Output
+
+![GitHub Logo](../../docs/Pictures/Timer.png)
