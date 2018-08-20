@@ -1,5 +1,13 @@
-# Application
+# CheckBox
 
-This example demonstrates the use of Gtk::Application class.
+This example demonstrates the use of CheckBox control.
 
-![GitHub Logo](../../docs/Pictures/Application.png)
+# Source
+
+[CheckBox.cpp](./CheckBox.cpp)
+
+[CMakeLists.txt](./CMakeLists.txt)
+
+# Output
+
+![GitHub Logo](../../docs/Pictures/CheckBox.png)

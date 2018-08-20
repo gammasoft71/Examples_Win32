@@ -1,5 +1,13 @@
-# Application
+# Label
 
-This example demonstrates the use of Gtk::Application class.
+This example demonstrates the use of Label control.
 
-![GitHub Logo](../../docs/Pictures/Application.png)
+# Source
+
+[Label.cpp](./Label.cpp)
+
+[CMakeLists.txt](./CMakeLists.txt)
+
+# Output
+
+![GitHub Logo](../../docs/Pictures/Label.png)

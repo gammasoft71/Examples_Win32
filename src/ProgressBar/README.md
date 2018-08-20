@@ -1,5 +1,13 @@
-# Application
+# ProgressBar
 
-This example demonstrates the use of Gtk::Application class.
+This example demonstrates the use of ProgressBar control.
 
-![GitHub Logo](../../docs/Pictures/Application.png)
+# Source
+
+[ProgressBar.cpp](./ProgressBar.cpp)
+
+[CMakeLists.txt](./CMakeLists.txt)
+
+# Output
+
+![GitHub Logo](../../docs/Pictures/ProgressBar.png)
