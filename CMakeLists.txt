@@ -51,4 +51,5 @@ add_subdirectory("src/Timer")
 # Other
 add_subdirectory("src/ApplicationIcon")
 add_subdirectory("src/ColoredTabPages")
+add_subdirectory("src/FormWithVersionInfo")
 #add_subdirectory("src/Drawing")
