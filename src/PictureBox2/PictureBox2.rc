@@ -1,0 +1,4 @@
+#include <Windows.h>
+#include "PictureBox2.h"
+
+ID_BITMAP_LOGO BITMAP DISCARDABLE "Resources\\Logo.bmp"
