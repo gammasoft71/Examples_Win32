@@ -1,1 +1,1 @@
-﻿# PictureBox2This example demonstrates the use PictureBox from bitmap resource.# Source[PictureBox2.cpp](./PictureBox2.cpp)[CMakeLists.txt](./CMakeLists.txt)# Output![GitHub Logo](../../docs/Pictures/PictureBox2.png)
+# PictureBox2This example demonstrates the use PictureBox from bitmap resource.# Source[PictureBox2.cpp](./PictureBox2.cpp)[PictureBox2.h](./PictureBox2.h)[PictureBox2.rc](./PictureBox2.rc)[CMakeLists.txt](./CMakeLists.txt)# Output![GitHub Logo](../../docs/Pictures/PictureBox2.png)
