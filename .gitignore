@@ -32,3 +32,4 @@ build-*
 #                                                             VisualStudio files
 .VS
 CMakeSettings.json
+*.aps
