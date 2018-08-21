@@ -1,0 +1,1 @@
+﻿# ApplicationIconThis example demonstrates the use of GetMessage and DispatchMessage loop.# Source[ApplicationIcon.cpp](./ApplicationIcon.cpp)[CMakeLists.txt](./CMakeLists.txt)# Output![GitHub Logo](../../docs/Pictures/ApplicationIcon.png)

@@ -17,7 +17,6 @@ add_subdirectory("src/Application")
 # Common Controls
 add_subdirectory("src/Button")
 add_subdirectory("src/CheckBox")
-add_subdirectory("src/ColoredTabPages")
 add_subdirectory("src/ComboBox")
 add_subdirectory("src/Label")
 add_subdirectory("src/PictureBox")
@@ -50,4 +49,6 @@ add_subdirectory("src/Timer")
 #add_subdirectory("src/SaveFileDialog")
 
 # Other
+add_subdirectory("src/ApplicationIcon")
+add_subdirectory("src/ColoredTabPages")
 #add_subdirectory("src/Drawing")
