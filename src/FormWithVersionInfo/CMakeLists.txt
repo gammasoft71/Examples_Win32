@@ -6,3 +6,4 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup")
 add_definitions(-DUNICODE)
 
 add_executable(FormWithVersionInfo WIN32 FormWithVersionInfo.rc FormWithVersionInfo.cpp)
+target_link_libraries(FormWithVersionInfo Mincore)

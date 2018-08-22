@@ -1,25 +1,28 @@
 #include <Windows.h>
 
-1 VERSIONINFO
-  FILEVERSION 1.0.0
-  PRODUCTVERSION 1.0.1
-  FILEFLAGSMASK 0x0L
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(65001)
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1.0.0
+ PRODUCTVERSION 1.0.1
+ FILEFLAGSMASK 0x0L
 #if !defined(NDEBUG)
-  FILEFLAGS VS_FF_DEBUG
+ FILEFLAGS VS_FF_DEBUG
 #endif
-  FILEOS VOS_NT
-  FILETYPE VFT_APP
-  FILESUBTYPE VFT2_UNKNOWN
+ FILEOS VOS_NT
+ FILETYPE VFT_APP
+ FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+  BLOCK "StringFileInfo"
   BEGIN
-    BLOCK "StringFileInfo"
-    BEGIN
-      BLOCK "040904E4"
+    BLOCK "000004b0"
     BEGIN
       VALUE "CompanyName", "Gammasoft"
       VALUE "FileDescription", "Form with version informations example"
       VALUE "FileVersion", "1.0.0"
       VALUE "InternalName", "FormWithVersionInfo"
-      VALUE "LegalCopyright", "© 2018 by Gammasoft."
+      VALUE "LegalCopyright", "Â© 2018 by Gammasoft."
       VALUE "LegalTrademarks1", ""
       VALUE "LegalTrademarks2", ""
       VALUE "OriginalFilename", "FormWithVersionInfo.exe"
@@ -27,9 +30,8 @@
       VALUE "ProductVersion", "1.0.0"
     END
   END
-
   BLOCK "VarFileInfo"
   BEGIN
-    VALUE "Translation", 0x409, 65001
+    VALUE "Translation", 0x000, 1200
   END
 END
