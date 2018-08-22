@@ -1,13 +1,15 @@
-# Form
+# FormWithVersionInfo
 
-This example demonstrates the use of Form control.
+This example demonstrates the use of Form control and version informations.
 
 # Source
 
-[Form.cpp](./Form.cpp)
+[FormWithVersionInfo.cpp](./FormWithVersionInfo.cpp)
+
+[FormWithVersionInfo.rc](./FormWithVersionInfo.rc)
 
 [CMakeLists.txt](./CMakeLists.txt)
 
 # Output
 
-![GitHub Logo](../../docs/Pictures/Form.png)
+![GitHub Logo](../../docs/Pictures/FormWithVersionInfo.png)
