@@ -10,3 +10,4 @@ endif()
 
 add_subdirectory("Win32.System")
 add_subdirectory("Win32.Gui")
+add_subdirectory("Win32.UnitTest")
