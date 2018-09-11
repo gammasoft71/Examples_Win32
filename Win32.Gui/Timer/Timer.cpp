@@ -5,11 +5,12 @@
 #include <Windows.h>
 #include <CommCtrl.h>
 
-HWND form;
-HWND label;
-HWND button;
-UINT_PTR timer;
+using namespace std;
 
+HWND form = nullptr;
+HWND label = nullptr;
+HWND button = nullptr;
+UINT_PTR timer = 0;
 bool enableTimer = false;
 int counter = 0;
 
@@ -17,8 +18,8 @@ WNDPROC defWndProc;
 
 void CALLBACK  OnTimerTick(HWND hwnd, UINT message, UINT_PTR idEvent, DWORD time) {
   if (idEvent == timer) {
-    std::wstringstream stream;
-    stream << std::fixed << std::setprecision(1) << (double)++counter / 10;
+    wstringstream stream;
+    stream << fixed << setprecision(1) << (double)++counter / 10;
     SendMessage(label, WM_SETTEXT, 0, (LPARAM)stream.str().c_str());
   }
 }
@@ -54,7 +55,7 @@ int main(int argc, char* argv[]) {
 
   ShowWindow(form, SW_SHOW);
 
-  MSG message;
+  MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
   return (int)message.wParam;

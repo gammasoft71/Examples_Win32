@@ -3,10 +3,9 @@
 #include <Windows.h>
 #include <CommCtrl.h>
 
-HWND form;
-HWND comboBox1;
-
-WNDPROC defWndProc;
+HWND form = nullptr;
+HWND comboBox1 = nullptr;
+WNDPROC defWndProc = nullptr;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == form) PostQuitMessage(0);
@@ -16,16 +15,16 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 int main(int argc, char* argv[]) {
   form = CreateWindowEx(0, WC_DIALOG, L"ComboBox example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 300, 300, nullptr, nullptr, nullptr, nullptr);
   comboBox1 = CreateWindowEx(0, WC_COMBOBOX, L"", WS_CHILD | WS_VISIBLE | CBS_DROPDOWN, 10, 10, 121, 21, form, nullptr, nullptr, nullptr);
+ 
   SendMessage(comboBox1, CB_ADDSTRING, 0, (LPARAM)L"item1");
   SendMessage(comboBox1, CB_ADDSTRING, 0, (LPARAM)L"item2");
   SendMessage(comboBox1, CB_ADDSTRING, 0, (LPARAM)L"item3");
   SendMessage(comboBox1, CB_SETCURSEL, 1, 0);
 
   defWndProc = (WNDPROC)SetWindowLongPtr(form, GWLP_WNDPROC, (LONG_PTR)WndProc);
-
   ShowWindow(form, SW_SHOW);
 
-  MSG message;
+  MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0)) {
     TranslateMessage(&message);
     DispatchMessage(&message);

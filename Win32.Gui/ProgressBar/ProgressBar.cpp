@@ -3,18 +3,15 @@
 #include <Windows.h>
 #include <CommCtrl.h>
 
-HWND form;
-HWND progressBar1;
-HWND progressBar2;
-HWND progressBar3;
-HWND progressBar4;
-HWND progressBar5;
-
-UINT_PTR timer;
-
+HWND form = nullptr;
+HWND progressBar1 = nullptr;
+HWND progressBar2 = nullptr;
+HWND progressBar3 = nullptr;
+HWND progressBar4 = nullptr;
+HWND progressBar5 = nullptr;
+UINT_PTR timer = 0;
 int position = 0;
-
-WNDPROC defWndProc;
+WNDPROC defWndProc = nullptr;
 
 void CALLBACK  OnTimerTick(HWND hwnd, UINT message, UINT_PTR idEvent, DWORD time) {
   position = position < 140 ? position + 1 : 0;
@@ -45,7 +42,7 @@ int main(int argc, char* argv[]) {
 
   ShowWindow(form, SW_SHOW);
 
-  MSG message;
+  MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
   return (int)message.wParam;

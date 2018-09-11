@@ -3,11 +3,10 @@
 #include <Windows.h>
 #include <CommCtrl.h>
 
-HWND form;
-HWND textBox1;
-HWND textBox2;
-
-WNDPROC defWndProc;
+HWND form = nullptr;
+HWND textBox1 = nullptr;
+HWND textBox2 = nullptr;
+WNDPROC defWndProc = nullptr;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == form) PostQuitMessage(0);
@@ -20,10 +19,9 @@ int main(int argc, char* argv[]) {
   textBox2 = CreateWindowEx(WS_EX_CLIENTEDGE, WC_EDIT, L"textBox2", WS_CHILD | WS_VISIBLE, 10, 50, 100, 23, form, nullptr, nullptr, nullptr);
 
   defWndProc = (WNDPROC)SetWindowLongPtr(form, GWLP_WNDPROC, (LONG_PTR)WndProc);
-
   ShowWindow(form, SW_SHOW);
 
-  MSG message;
+  MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0)) {
     TranslateMessage(&message);
     DispatchMessage(&message);
