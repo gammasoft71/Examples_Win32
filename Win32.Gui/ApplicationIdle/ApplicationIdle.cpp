@@ -4,6 +4,7 @@
 #include <string>
 #include <Windows.h>
 
+using namespace std::chrono;
 using namespace std::chrono_literals;
 
 HWND form;
@@ -32,16 +33,15 @@ int main(int argc, char* argv[]) {
   MSG message = {0};
 
   while (message.message != WM_QUIT) {
-    static std::chrono::high_resolution_clock::time_point lastIdleTime;
     if (PeekMessage(&message, nullptr, 0, 0, PM_NOREMOVE)) {
       GetMessage(&message, nullptr, 0, 0);
       TranslateMessage(&message);
       DispatchMessage(&message);
     } else {
-      std::chrono::milliseconds elapsedTime = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - lastIdleTime);
-      if (elapsedTime >= 100ms) {
+      static std::chrono::high_resolution_clock::time_point lastIdleTime;
+      if (high_resolution_clock::now() - lastIdleTime >= 100ms) {
         OnApplicationIdle();
-        lastIdleTime = std::chrono::high_resolution_clock::now();
+        lastIdleTime = high_resolution_clock::now();
       }
     }
   }
