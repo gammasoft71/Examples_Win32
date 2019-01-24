@@ -5,17 +5,19 @@
 #include <Windows.h>
 #include <CommCtrl.h>
 
-HWND form;
-HWND tabControl1;
+using namespace std;
+using namespace std::literals;
 
 struct TabPage {
   HWND panel;
   TCITEM tabControlItem;
-  std::wstring text;
+  wstring text;
 };
-std::vector<TabPage> tabPages(3);
 
-WNDPROC defWndProc;
+HWND form = nullptr;
+HWND tabControl1 = nullptr;
+vector<TabPage> tabPages(3);
+WNDPROC defWndProc = nullptr;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == form) PostQuitMessage(0);
@@ -29,7 +31,7 @@ int main(int argc, char* argv[]) {
   form = CreateWindowEx(0, WC_DIALOG, L"TabControl example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 406, 316, nullptr, nullptr, nullptr, nullptr);
   tabControl1 = CreateWindowEx(0, WC_TABCONTROL, nullptr, WS_CHILD | WS_VISIBLE, 10, 10, 370, 250, form, nullptr, nullptr, nullptr);
   for (size_t index = 0; index < tabPages.size(); index++) {
-    tabPages[index].text = L"tabPage" + std::to_wstring(index + 1);
+    tabPages[index].text = L"tabPage"s + to_wstring(index + 1);
     tabPages[index].tabControlItem.mask = TCIF_TEXT;
     tabPages[index].tabControlItem.pszText = (LPWSTR)tabPages[index].text.c_str();
     TabCtrl_InsertItem(tabControl1, TabCtrl_GetItemCount(tabControl1), &tabPages[index].tabControlItem);
@@ -39,12 +41,10 @@ int main(int argc, char* argv[]) {
   }
 
   defWndProc = (WNDPROC)SetWindowLongPtr(form, GWLP_WNDPROC, (LONG_PTR)WndProc);
-
   ShowWindow(tabPages[0].panel, SW_SHOW);
-
   ShowWindow(form, SW_SHOW);
 
-  MSG message;
+  MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
   return (int)message.wParam;

@@ -4,11 +4,11 @@
 #include <CommCtrl.h>
 #include "PictureBox2.h"
 
-HWND form;
-HWND panel1;
-HWND pictureBox1;
-HBITMAP picture;
-WNDPROC defWndProc;
+HWND form = nullptr;
+HWND panel1 = nullptr;
+HWND pictureBox1 = nullptr;
+HBITMAP picture = nullptr;
+WNDPROC defWndProc = nullptr;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == form) PostQuitMessage(0);
@@ -23,10 +23,9 @@ int main(int argc, char* argv[]) {
   SendMessage(pictureBox1, STM_SETIMAGE, (WPARAM)IMAGE_BITMAP, (LPARAM)picture);;
 
   defWndProc = (WNDPROC)SetWindowLongPtr(form, GWLP_WNDPROC, (LONG_PTR)WndProc);
-
   ShowWindow(form, SW_SHOW);
 
-  MSG message;
+  MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
   return (int)message.wParam;

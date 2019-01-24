@@ -3,10 +3,9 @@
 #include <Windows.h>
 #include <CommCtrl.h>
 
-HWND form;
-HWND button;
-
-WNDPROC defWndProc;
+HWND form = nullptr;
+HWND button = nullptr;
+WNDPROC defWndProc = nullptr;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == form && MessageBox(form, L"Are you sure you want exit?", L"Close Form", MB_ICONQUESTION | MB_YESNO) == IDYES) PostQuitMessage(0);
@@ -19,10 +18,9 @@ int main(int argc, char* argv[]) {
   button = CreateWindowEx(0, WC_BUTTON, L"Close", WS_CHILD | WS_VISIBLE, 10, 10, 75, 25, form, nullptr, nullptr, nullptr);
  
   defWndProc = (WNDPROC)SetWindowLongPtr(form, GWLP_WNDPROC, (LONG_PTR)WndProc);
-
   ShowWindow(form, SW_SHOW);
 
-  MSG message;
+  MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
   return (int)message.wParam;

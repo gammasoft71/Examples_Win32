@@ -3,12 +3,11 @@
 #include <Windows.h>
 #include <CommCtrl.h>
 
-HWND form;
-HWND checkBox1;
-HWND checkBox2;
-HWND checkBox3;
-
-WNDPROC defWndProc;
+HWND form = nullptr;
+HWND checkBox1 = nullptr;
+HWND checkBox2 = nullptr;
+HWND checkBox3 = nullptr;
+WNDPROC defWndProc = nullptr;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == form) PostQuitMessage(0);
@@ -30,7 +29,7 @@ int main(int argc, char* argv[]) {
 
   ShowWindow(form, SW_SHOW);
 
-  MSG message;
+  MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
   return (int)message.wParam;

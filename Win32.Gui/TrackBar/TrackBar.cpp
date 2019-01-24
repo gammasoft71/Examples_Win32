@@ -4,18 +4,19 @@
 #include <Windows.h>
 #include <CommCtrl.h>
 
-HWND form;
-HWND trackBar;
-HWND progressBar;
-HWND label;
+using namespace std;
 
-WNDPROC defWndProc;
+HWND form = nullptr;
+HWND trackBar = nullptr;
+HWND progressBar = nullptr;
+HWND label = nullptr;
+WNDPROC defWndProc = nullptr;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == form) PostQuitMessage(0);
   if (message == WM_HSCROLL && hwnd == form && (HWND)lParam == trackBar) {
     SendMessage(progressBar, PBM_SETPOS, SendMessage(trackBar, TBM_GETPOS, 0, 0), 0);
-    SendMessage(label, WM_SETTEXT, 0, (LPARAM)std::to_wstring(SendMessage(trackBar, TBM_GETPOS, 0, 0)).c_str());
+    SendMessage(label, WM_SETTEXT, 0, (LPARAM)to_wstring(SendMessage(trackBar, TBM_GETPOS, 0, 0)).c_str());
   }
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
@@ -36,7 +37,7 @@ int main(int argc, char* argv[]) {
 
   ShowWindow(form, SW_SHOW);
 
-  MSG message;
+  MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
   return (int)message.wParam;

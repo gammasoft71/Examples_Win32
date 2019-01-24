@@ -6,21 +6,21 @@
 #include <Windowsx.h>
 #include <CommCtrl.h>
 
-HWND form;
-HWND tabControl1;
+using namespace std;
 
 struct TabPage {
   HWND panel;
   TCITEM tabControlItem;
-  std::wstring text;
+  wstring text;
   HBRUSH backBrush;
 };
-std::vector<TabPage> tabPages(4);
 
-std::vector<COLORREF> tabPagesColors = { RGB(0xFF, 0, 0), RGB(0, 0x80, 0), RGB(0, 0, 0xFF), RGB(0xFF, 0xFF, 0) };
-std::vector<std::wstring> tabPageNames = { L"Red", L"Green", L"Blue", L"Yellow" };
-
-WNDPROC defWndProc;
+HWND form = nullptr;
+HWND tabControl1 = nullptr;
+vector<TabPage> tabPages(4);
+vector<COLORREF> tabPagesColors = { RGB(0xFF, 0, 0), RGB(0, 0x80, 0), RGB(0, 0, 0xFF), RGB(0xFF, 0xFF, 0) };
+vector<wstring> tabPageNames = { L"Red", L"Green", L"Blue", L"Yellow" };
+WNDPROC defWndProc = nullptr;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == form) PostQuitMessage(0);
@@ -72,7 +72,7 @@ int main(int argc, char* argv[]) {
 
   ShowWindow(form, SW_SHOW);
 
-  MSG message;
+  MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
   return (int)message.wParam;

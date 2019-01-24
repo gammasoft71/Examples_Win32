@@ -3,10 +3,9 @@
 #include <Windows.h>
 #include <CommCtrl.h>
 
-HWND form;
-HWND label;
-
-WNDPROC defWndProc;
+HWND form = nullptr;
+HWND label = nullptr;
+WNDPROC defWndProc = nullptr;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   switch (message) {
@@ -28,7 +27,7 @@ int main(int argc, char* argv[]) {
 
   ShowWindow(form, SW_SHOW);
 
-  MSG message;
+  MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
   return (int)message.wParam;
