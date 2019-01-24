@@ -10,4 +10,4 @@ This example demonstrates the use of Timer control.
 
 # Output
 
-![GitHub Logo](../../docs/Pictures/Timer.png)
+![Screenshot](../../docs/Pictures/Timer.png)

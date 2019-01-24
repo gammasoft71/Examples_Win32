@@ -10,4 +10,4 @@ This example demonstrates the use of ProgressBar control.
 
 # Output
 
-![GitHub Logo](../../docs/Pictures/ProgressBar.png)
+![Screenshot](../../docs/Pictures/ProgressBar.png)

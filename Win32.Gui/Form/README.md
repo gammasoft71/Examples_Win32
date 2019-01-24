@@ -10,4 +10,4 @@ This example demonstrates the use of Form control.
 
 # Output
 
-![GitHub Logo](../../docs/Pictures/Form.png)
+![Screenshot](../../docs/Pictures/Form.png)

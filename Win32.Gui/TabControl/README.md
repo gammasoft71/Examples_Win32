@@ -10,4 +10,4 @@ This example demonstrates the use of TabControl control.
 
 # Output
 
-![GitHub Logo](../../docs/Pictures/TabControl.png)
+![Screenshot](../../docs/Pictures/TabControl.png)

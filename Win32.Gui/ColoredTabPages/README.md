@@ -7,4 +7,4 @@ This example demonstrates the use of Gtk::Application class.
 [ColoredTabPages.cpp](./ColoredTabPages.cpp)[CMakeLists.txt](./CMakeLists.txt)
 # Output
 
-![GitHub Logo](../../docs/Pictures/ColoredTabPages.png)
+![Screenshot](../../docs/Pictures/ColoredTabPages.png)

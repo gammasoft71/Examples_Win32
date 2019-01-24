@@ -10,4 +10,4 @@ This example demonstrates the use of Button control.
 
 # Output
 
-![GitHub Logo](../../docs/Pictures/Button.png)
+![Screenshot](../../docs/Pictures/Button.png)

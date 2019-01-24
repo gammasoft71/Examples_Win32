@@ -10,4 +10,4 @@ This example demonstrates the use of RadioButton control.
 
 # Output
 
-![GitHub Logo](../../docs/Pictures/RadioButton.png)
+![Screenshot](../../docs/Pictures/RadioButton.png)

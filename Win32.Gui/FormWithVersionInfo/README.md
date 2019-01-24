@@ -12,4 +12,4 @@ This example demonstrates the use of Form control and version informations.
 
 # Output
 
-![GitHub Logo](../../docs/Pictures/FormWithVersionInfo.png)
+![Screenshot](../../docs/Pictures/FormWithVersionInfo.png)

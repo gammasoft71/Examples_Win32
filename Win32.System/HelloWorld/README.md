@@ -1,13 +1,15 @@
-# Application
+# HelloWorld
 
-This example demonstrates the use of GetMessage and DispatchMessage loop.
+The classic first application 'Hello World'.
 
 # Source
 
-[Application.cpp](./Application.cpp)
+[HelloWorld.cpp](./HelloWorld.cpp)
 
 [CMakeLists.txt](./CMakeLists.txt)
 
 # Output
 
-![GitHub Logo](../../docs/Pictures/Application.png)
+```
+Hello, World!
+```
