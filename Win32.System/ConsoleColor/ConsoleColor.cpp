@@ -1,95 +1,96 @@
 ﻿#include <cstdint>
+#include <vector>
 #include <Windows.h>
 
-int main(int argc, char* argv[]) {
-  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"                                                                                \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"                                                                        ▄▄▄▄███ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"                                                         ▄▄▄▄██████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"                                          ▄▄▄▄█████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"                           ▄▄▄███    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"          ▄▄▄▄███████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"                                                                                \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"                                                                                \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" ████████████████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"      ▀▀▀▀███████████████████████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"                      ▀▀▀▀███████    ▐█████████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"                                      ▀▀▀▀▀████████████████████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"                                                      ▀▀▀▀█████████████████████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"                                                                     ▀▀▀▀▀█████ \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"                                                                                \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"                                   Win32 Api                                    \n", 81, nullptr, nullptr);
-  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_INTENSITY);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"Using the Windows API, you can develop applications that run successfully on all\n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"versions of Windows while taking advantage of the features and capabilities     \n", 81, nullptr, nullptr);
-  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"unique to each version.                                                         \n", 81, nullptr, nullptr);
+int main() {
+  const std::vector<std::wstring> logo = {
+    L"████████████████████████████████████████████████████████████",
+    L"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████",
+    L"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████",
+    L"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░██████████",
+    L"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████████",
+    L"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████████",
+    L"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████████",
+    L"███████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░█████████████",
+    L"██████████████████████████████████████████████████████████████████████",
+    L"██████████████████████████████████████████████████████████████████████",
+    L"██████████████████████████▀▄▄▄▄▀███████▀▄▄▄▄▀█████████████████████████",
+    L"███████████████████████████▀▀▀▀███████▀▀▀▀▀███████████████████████████",
+    L"██████████████████████████      ▀████       ▀█████████████████████████",
+    L"███████████             ▐         ▀▀         ▐              ██████████",
+    L"█████████               ▐   ███   ▌▐   ███   ▐               █████████",
+    L"█████████               ▐   █▄▄▌  ▌▐  ▐▄▄█   ▐               █████████",
+    L"█████████                ▐▄  ▀▀ ▄▀  ▀▄ ▀▀  ▄▀                █████████",
+    L"█████████                  ▀▀▄▄▀      ▀▀▄▄▀                  █████████",
+    L"█████████                                                    █████████",
+    L"█████████                 █▄                ▌                █████████",
+    L"█████████                  ▌▀▀▄          ▄██                 █████████",
+    L"█████████                  ▐   ▀▀▄▄▄▄▄▄█▀ █▌                 █████████",
+    L"█████████                   ▐            ▄█                  █████████",
+    L"█████████                    █          ▄█                   █████████",
+    L"█████████                     ▀▄       █▀                    █████████",
+    L"█████████                       ▀▄▄▄▄██▀                     █████████",
+    L"█████████                                                    █████████",
+    L"█████████                                                    █████████",
+    L"█████████                                                    █████████",
+    L"█████████                                                    █████████",
+    L"█████████                                                    █████████",
+    L"██████████████████████████████████████████████████████████████████",
+  };
+
+  for (size_t index = 0; index < logo.size(); ++index) {
+    if (index == 0 || index == logo.size() - 1)
+      WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE),  L"       ", 7, nullptr, nullptr);
+    else
+      WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"     ", 5, nullptr, nullptr);
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE);
+    WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), logo[index].c_str(), logo[index].size()-1, nullptr, nullptr);
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+    WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"\n", 1, nullptr, nullptr);
+  }
+
+  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE);
+  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"                                    Gammasoft                                   \n", 81, nullptr, nullptr);
+  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY);
+  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" More than thirty years of passion for high technology especially in development\n", 81, nullptr, nullptr);
+  WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L" (c++, c#, objective-c, ...).\n", 30, nullptr, nullptr);
   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 }
 
 // This code produces the following output with colors:
 // 
-//                                                                                 
-//                                                                         ▄▄▄▄███ 
-//                                                          ▄▄▄▄██████████████████ 
-//                                           ▄▄▄▄█████████████████████████████████ 
-//                            ▄▄▄███    ▐█████████████████████████████████████████ 
-//           ▄▄▄▄███████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//                                                                                 
-//                                                                                 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//  ████████████████████████████████    ▐█████████████████████████████████████████ 
-//       ▀▀▀▀███████████████████████    ▐█████████████████████████████████████████ 
-//                       ▀▀▀▀███████    ▐█████████████████████████████████████████ 
-//                                       ▀▀▀▀▀████████████████████████████████████ 
-//                                                       ▀▀▀▀█████████████████████ 
-//                                                                      ▀▀▀▀▀█████ 
-//                                                                                 
-//                                    Win32 Api                                    
-// Using the Windows API, you can develop applications that run successfully on all
-// versions of Windows while taking advantage of the features and capabilities     
-// unique to each version.                                                         
+//        ████████████████████████████████████████████████████████████
+//      ██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████
+//      ██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████
+//      ██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░██████████
+//      ██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████████
+//      ██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████████
+//      ██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████████
+//      ███████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░█████████████
+//      ██████████████████████████████████████████████████████████████████████
+//      ██████████████████████████████████████████████████████████████████████
+//      ██████████████████████████▀▄▄▄▄▀███████▀▄▄▄▄▀█████████████████████████
+//      ███████████████████████████▀▀▀▀███████▀▀▀▀▀███████████████████████████
+//      ██████████████████████████      ▀████       ▀█████████████████████████
+//      ███████████             ▐         ▀▀         ▐              ██████████
+//      █████████               ▐   ███   ▌▐   ███   ▐               █████████
+//      █████████               ▐   █▄▄▌  ▌▐  ▐▄▄█   ▐               █████████
+//      █████████                ▐▄  ▀▀ ▄▀  ▀▄ ▀▀  ▄▀                █████████
+//      █████████                  ▀▀▄▄▀      ▀▀▄▄▀                  █████████
+//      █████████                                                    █████████
+//      █████████                 █▄                ▌                █████████
+//      █████████                  ▌▀▀▄          ▄██                 █████████
+//      █████████                  ▐   ▀▀▄▄▄▄▄▄█▀ █▌                 █████████
+//      █████████                   ▐            ▄█                  █████████
+//      █████████                    █          ▄█                   █████████
+//      █████████                     ▀▄       █▀                    █████████
+//      █████████                       ▀▄▄▄▄██▀                     █████████
+//      █████████                                                    █████████
+//      █████████                                                    █████████
+//      █████████                                                    █████████
+//      █████████                                                    █████████
+//      █████████                                                    █████████
+//        ██████████████████████████████████████████████████████████████████
+//                                      Gammasoft
+//      More than thirty years of passion for high technology especially in development
+//      (c++, c#, objective-c, ...).
