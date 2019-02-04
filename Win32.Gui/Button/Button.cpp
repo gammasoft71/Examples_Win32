@@ -18,11 +18,11 @@ int button2Clicked = 0;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == form) PostQuitMessage(0);
-  if (message == WM_COMMAND && (HWND)lParam == button1) {
+  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && (HWND)lParam == button1) {
     wstring result = L"button1 clicked "s + to_wstring(++button1Clicked) + L" times"s;
     SendMessage(label1, WM_SETTEXT, 0, (LPARAM)result.c_str());
   }
-  if (message == WM_COMMAND && (HWND)lParam == button2) {
+  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && (HWND)lParam == button2) {
     wstring result = L"button2 clicked "s + to_wstring(++button2Clicked) + L" times"s;
     SendMessage(label2, WM_SETTEXT, 0, (LPARAM)result.c_str());
   }
