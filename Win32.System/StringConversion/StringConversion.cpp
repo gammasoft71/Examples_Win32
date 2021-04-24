@@ -24,7 +24,7 @@ std::wstring to_wstring(const std::wstring& wstr) {
   return wstr;
 }
 
-int main(int argc, char* argv[]) {
+int main() {
   WriteConsoleA(GetStdHandle(STD_OUTPUT_HANDLE), to_string("Hello, World1 !\n").c_str(), 16, nullptr, nullptr);
   WriteConsoleA(GetStdHandle(STD_OUTPUT_HANDLE), to_string(L"Hello, World2 !\n").c_str(), 16, nullptr, nullptr);
   WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), to_wstring("Hello, World3 !\n").c_str(), 16, nullptr, nullptr);

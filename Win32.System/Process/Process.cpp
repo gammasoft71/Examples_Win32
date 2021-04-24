@@ -2,7 +2,7 @@
 #include <string>
 #include <Windows.h>
 
-int main(int argc, char* argv[]) {
+int main() {
   STARTUPINFO startupInfo;
   PROCESS_INFORMATION processInfo;
 

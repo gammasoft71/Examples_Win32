@@ -1,0 +1,1 @@
+# TextBoxThis example demonstrates the use of TextBox control.# Source[TextBox.cpp](./TextBox.cpp)[CMakeLists.txt](./CMakeLists.txt)# Output![Screenshot](../../docs/Pictures/TextBox.png)

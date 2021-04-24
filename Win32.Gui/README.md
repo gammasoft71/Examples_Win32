@@ -5,73 +5,64 @@ Shows how to use Win32 controls by proghramming code (c++17).
 
 ## Hello World
 
-["Hello World"](HelloWorldForm/README.md) The classic first application HelloWorld.
+* ["Hello World"](HelloWorlds/HelloWorldLabel/README.md) The classic first application HelloWorld.
 
 ## Application and messages
 
-[Application](Application/README.md) Shows how to create an Application.
+* [Application](Appllications/Application/README.md) Shows how to create an Application.
+* [ApplicationIcon](Appllications/ApplicationIcon/README.md) Shows how to create an executable with icon.
 
 ## Common Controls
 
-[Button](Button/README.md) Shows how to create a Button and Event Click.
+* [Button](Controls/Button/README.md) Shows how to create a Button and Event Click.
+* [CheckBox](Controls/CheckBox/README.md) Shows how to create a CheckBox.
+* [ComboBox](Controls/ComboBox/README.md) Shows how to create a ComboBox.
+* [Label](Controls/Label/README.md) Shows how to create a Label.
+* [PictureBox](Controls/PictureBox/README.md) Shows how to create a PictureBox from bitmap file.
+* [ProgressBar](Controls/ProgressBar/README.md) Shows how to create a ProgressBar.
+* [RadioButton](Controls/RadioButton/README.md) Shows how to create a RadioButton.
+* [TextBox](Controls/TextBox/README.md) Shows how to create a TextBox.
+* [TrackBar](Controls/TrackBar/README.md) Shows how to create a TrackBar.
 
-[CheckBox](CheckBox/README.md) Shows how to create a CheckBox.
+## Forms
 
-[ComboBox](ComboBox/README.md) Shows how to create a ComboBox.
-
-[Label](Label/README.md) Shows how to create a Label.
-
-[PictureBox](PictureBox/README.md) Shows how to create a PictureBox from bitmap file.
-
-[PictureBox2](PictureBox2/README.md) Shows how to create a PictureBox from bitmap resource.
-
-[ProgressBar](ProgressBar/README.md) Shows how to create a ProgressBar.
-
-[RadioButton](RadioButton/README.md) Shows how to create a RadioButton.
-
-[TextBox](TextBox/README.md) Shows how to create a TextBox.
-
-[TrackBar](TrackBar/README.md) Shows how to create a TrackBar.
+* [Form](Forms/Form/README.md) Shows how to create a Form.
 
 ## Containers
 
-[Form](Form/README.md) Shows how to create a Form.
-
-[GroupBox](GroupBox/README.md) Shows how to create a GroupBox.
-
-[Panel](Panel/README.md) Shows how to create a Panel.
-
-[TabControl](TabControl/README.md) Shows how to create a TabControl.
+* [GroupBox](Containers/GroupBox/README.md) Shows how to create a GroupBox.
+* [Panel](Containers/Panel/README.md) Shows how to create a Panel.
+* [TabControl](Containers/TabControl/README.md) Shows how to create a TabControl.
 
 ## Menus and toolbars
 
-[MainMenu](MainMenu/README.md) Shows how to create a MainMenu.
+* [MainMenu](MenusAndToolbars/MainMenu/README.md) Shows how to create a MainMenu.
+* [Toolbar](MenusAndToolbars/Toolbar/README.md) Shows how to create a Toolbar.
 
 ## Components
 
-[Timer](Timer/README.md) Shows how to create a Timer.
+* [Timer](Components/Timer/README.md) Shows how to create a Timer.
 
 ## Dialogs
 
-[ColorDialog](ColorDialog/README.md) Shows how to create a ColorDialog.
+* [ColorDialog](Dialogs/ColorDialog/README.md) Shows how to create a ColorDialog.
+* [FolderBrowserDialog](Dialogs/FolderBrowserDialog/README.md) Shows how to create a FolderBrowserDialog.
+* [FontDialog](Dialogs/FontDialog/README.md) Shows how to create a FontDialog.
+* [OpenFileDialog](Dialogs/OpenFileDialog/README.md) Shows how to create an OpenFileDialog.
+* [MessageBox](Dialogs/MessageBox/README.md) Shows how to create a MessageBox.
+* [SaveFileDialog](Dialogs/SaveFileDialog/README.md) Shows how to create a SaveFileDialog.
 
-[FolderBrowserDialog](FolderBrowserDialog/README.md) Shows how to create a FolderBrowserDialog.
+## Events
 
-[FontDialog](FontDialog/README.md) Shows how to create a FontDialog.
+* [ApplicationIdle](Events/ApplicationIdle/README.md) Shows how to create an Application and Idle event.
 
-[OpenFileDialog](OpenFileDialog/README.md) Shows how to create an OpenFileDialog.
-
-[MessageBox](MessageBox/README.md) Shows how to create a MessageBox.
-
-[SaveFileDialog](SaveFileDialog/README.md) Shows how to create a SaveFileDialog.
 
 ## Other
 
-[ApplicationIcon](ApplicationIcon/README.md) Shows how to create an executable with icon.
-
-[ColoredTabPages](ColoredTabPages/README.md) Shows how to create a TabControl with colored TabPages with.
-
-[FormWithVersionInfo](FormWithVersionInfo/README.md) Shows how to create a Form wtih version informations.
+* [ColoredTabPages](Others/Others/ColoredTabPages/README.md) Shows how to create a TabControl with colored TabPages with.
+* [FormWithVersionInfo](Others/FormWithVersionInfo/README.md) Shows how to create a Form wtih version informations.
+* [PictureBox2](Others/PictureBox2/README.md) Shows how to create a PictureBox from bitmap resource.
+* [TabControl](Others/TabControl2/README.md) Shows how to create a TabControl.
 
 ## Generate and build
 

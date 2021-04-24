@@ -1,0 +1,1 @@
+﻿# HelloWorldFormThe classic first application "Hello World".# Source[HelloWorldForm.cpp](./HelloWorldForm.cpp)[CMakeLists.txt](./CMakeLists.txt)# Output![Screenshot](../../docs/Pictures/HelloWorld.png)
