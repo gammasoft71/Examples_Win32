@@ -26,7 +26,7 @@ Shows how to use Win32 controls by proghramming code (c++17).
 
 ## Windows
 
-* [Window](Windowd/Window/README.md) Shows how to create a Window.
+* [Window](Windows/Window/README.md) Shows how to create a Window.
 
 ## Containers
 
