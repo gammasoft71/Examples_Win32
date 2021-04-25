@@ -4,17 +4,22 @@
 #include <CommCtrl.h>
 
 HWND window = nullptr;
-HWND label1 = nullptr;
+HWND staticText1 = nullptr;
 WNDPROC defWndProc = nullptr;
 
+LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  PostQuitMessage(0);
+  return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
+}
+
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  if (message == WM_CLOSE && hwnd == window) PostQuitMessage(0);
+  if (message == WM_CLOSE && hwnd == window) return OnWindowClose(hwnd, message, wParam, lParam);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
 int main() {
-  window = CreateWindowEx(0, WC_DIALOG, L"Label example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 300, 300, nullptr, nullptr, nullptr, nullptr);
-  label1 = CreateWindowEx(0, WC_STATIC, L"label1", WS_CHILD | WS_VISIBLE, 10, 10, 100, 23, window, nullptr, nullptr, nullptr);
+  window = CreateWindowEx(0, WC_DIALOG, L"StaticText example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 300, 300, nullptr, nullptr, nullptr, nullptr);
+  staticText1 = CreateWindowEx(0, WC_STATIC, L"staticText1", WS_CHILD | WS_VISIBLE, 10, 10, 100, 23, window, nullptr, nullptr, nullptr);
 
   defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
   ShowWindow(window, SW_SHOW);
