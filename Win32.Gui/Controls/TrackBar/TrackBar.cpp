@@ -9,15 +9,24 @@ using namespace std;
 HWND window = nullptr;
 HWND trackBar = nullptr;
 HWND progressBar = nullptr;
-HWND label = nullptr;
+HWND staticText = nullptr;
 WNDPROC defWndProc = nullptr;
 
+LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  PostQuitMessage(0);
+  return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
+}
+
+LRESULT OnTrackBarChanged(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  LRESULT value = SendMessage(trackBar, TBM_GETPOS, 0, 0);
+  SendMessage(progressBar, PBM_SETPOS, value, 0);
+  SendMessage(staticText, WM_SETTEXT, 0, (LPARAM)to_wstring(value).c_str());
+  return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
+}
+
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  if (message == WM_CLOSE && hwnd == window) PostQuitMessage(0);
-  if (message == WM_HSCROLL && hwnd == window && (HWND)lParam == trackBar) {
-    SendMessage(progressBar, PBM_SETPOS, SendMessage(trackBar, TBM_GETPOS, 0, 0), 0);
-    SendMessage(label, WM_SETTEXT, 0, (LPARAM)to_wstring(SendMessage(trackBar, TBM_GETPOS, 0, 0)).c_str());
-  }
+  if (message == WM_CLOSE && hwnd == window) return OnWindowClose(hwnd, message, wParam, lParam);
+  if (message == WM_HSCROLL && hwnd == window && (HWND)lParam == trackBar) return OnTrackBarChanged(hwnd, message, wParam, lParam);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -25,7 +34,7 @@ int main() {
   window = CreateWindowEx(0, WC_DIALOG, L"TrackBar example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 300, 300, nullptr, nullptr, nullptr, nullptr);
   trackBar = CreateWindowEx(0, TRACKBAR_CLASS, nullptr, WS_CHILD | TBS_HORZ | TBS_NOTICKS | WS_VISIBLE, 20, 50, 200, 23, window, nullptr, nullptr, nullptr);
   progressBar = CreateWindowEx(0, PROGRESS_CLASS, nullptr, WS_CHILD | PBS_SMOOTH | WS_VISIBLE, 20, 100, 200, 23, window, nullptr, nullptr, nullptr);
-  label = CreateWindowEx(0, WC_STATIC, L"100", WS_CHILD | WS_VISIBLE, 20, 150, 100, 23, window, nullptr, nullptr, nullptr);
+  staticText = CreateWindowEx(0, WC_STATIC, L"100", WS_CHILD | WS_VISIBLE, 20, 150, 100, 23, window, nullptr, nullptr, nullptr);
 
   defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
 
