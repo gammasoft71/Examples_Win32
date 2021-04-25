@@ -60,7 +60,7 @@ Shows how to use Win32 controls by proghramming code (c++17).
 ## Other
 
 * [ColoredTabPages](Others/Others/ColoredTabPages/README.md) Shows how to create a TabControl with colored TabPages with.
-* [FormWithVersionInfo](Others/FormWithVersionInfo/README.md) Shows how to create a Form wtih version informations.
+* [WindowWithVersionInfo](Others/WindowWithVersionInfo/README.md) Shows how to create a Form wtih version informations.
 * [PictureBox2](Others/PictureBox2/README.md) Shows how to create a PictureBox from bitmap resource.
 * [TabControl](Others/TabControl2/README.md) Shows how to create a TabControl.
 
