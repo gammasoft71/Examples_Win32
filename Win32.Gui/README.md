@@ -83,4 +83,4 @@ Select any project and type Ctrl+F5 to build and run it.
 
 This project run only on Windows with [Visual Studio](https://www.visualstudio.com) and [CMake](https://cmake.org).
 
-See [Windows controls](https://docs.microsoft.com/en-us/windows/win32/controls/window-controls) for more informations.
+See [Windows Controls](https://docs.microsoft.com/en-us/windows/win32/controls/window-controls) for more informations.
