@@ -1,1 +1,0 @@
-﻿# HelloWorldMessage2The classic first application "Hello World".# Source[HelloWorldMessage2.cpp](HelloWorldMessage2.cpp)[CMakeLists.txt](CMakeLists.txt)# Output![Screenshot](../../../docs/Pictures/HelloWorldMessage2.png)

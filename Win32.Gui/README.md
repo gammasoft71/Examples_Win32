@@ -3,16 +3,19 @@
 
 Shows how to use Win32 controls by proghramming code (c++17).
 
-## Hello World
+## Hello Worlds
 
-* ["Hello World"](HelloWorlds/HelloWorldLabel/README.md) The classic first application HelloWorld.
+* [HelloWorldEmoticons](HelloWorlds/HelloWorldEmoticons/README.md) The classic first application HelloWorld width emoticons.
+* [HelloWorldLabel](HelloWorlds/HelloWorldLabel/README.md) The classic first application HelloWorld with label control.
+* [HelloWorldMessageBox](HelloWorlds/HelloWorldMessageBox/README.md) The classic first application HelloWorld with MessageBox.
+* [HelloWorldMessageBox2](HelloWorlds/HelloWorldMessageBox2/README.md) The classic first application HelloWorld with MessageBox.
 
-## Application and messages
+## Applications
 
 * [Application](Appllications/Application/README.md) Shows how to create an Application.
 * [ApplicationIcon](Appllications/ApplicationIcon/README.md) Shows how to create an executable with icon.
 
-## Common Controls
+## Controls
 
 * [Button](Controls/Button/README.md) Shows how to create a Button and Event Click.
 * [CheckBox](Controls/CheckBox/README.md) Shows how to create a CheckBox.
@@ -23,10 +26,6 @@ Shows how to use Win32 controls by proghramming code (c++17).
 * [RadioButton](Controls/RadioButton/README.md) Shows how to create a RadioButton.
 * [TextBox](Controls/TextBox/README.md) Shows how to create a TextBox.
 * [TrackBar](Controls/TrackBar/README.md) Shows how to create a TrackBar.
-
-## Windows
-
-* [Window](Windows/Window/README.md) Shows how to create a Window.
 
 ## Containers
 
@@ -39,9 +38,9 @@ Shows how to use Win32 controls by proghramming code (c++17).
 * [MainMenu](MenusAndToolbars/MainMenu/README.md) Shows how to create a MainMenu.
 * [Toolbar](MenusAndToolbars/Toolbar/README.md) Shows how to create a Toolbar.
 
-## Components
+## Windows
 
-* [Timer](Components/Timer/README.md) Shows how to create a Timer.
+* [Window](Windows/Window/README.md) Shows how to create a Window.
 
 ## Dialogs
 
@@ -52,6 +51,10 @@ Shows how to use Win32 controls by proghramming code (c++17).
 * [MessageBox](Dialogs/MessageBox/README.md) Shows how to create a MessageBox.
 * [SaveFileDialog](Dialogs/SaveFileDialog/README.md) Shows how to create a SaveFileDialog.
 
+## Components
+
+* [Timer](Components/Timer/README.md) Shows how to create a Timer.
+
 ## Events
 
 * [ApplicationIdle](Events/ApplicationIdle/README.md) Shows how to create an Application and Idle event.
@@ -60,14 +63,13 @@ Shows how to use Win32 controls by proghramming code (c++17).
 ## Other
 
 * [ColoredTabPages](Others/Others/ColoredTabPages/README.md) Shows how to create a TabControl with colored TabPages with.
-* [WindowWithVersionInfo](Others/WindowWithVersionInfo/README.md) Shows how to create a Form wtih version informations.
 * [PictureBox2](Others/PictureBox2/README.md) Shows how to create a PictureBox from bitmap resource.
-* [TabControl](Others/TabControl2/README.md) Shows how to create a TabControl.
+* [TabControl2](Others/TabControl2/README.md) Shows how to create a TabControl.
+* [WindowWithVersionInfo](Others/WindowWithVersionInfo/README.md) Shows how to create a Form wtih version informations.
 
 ## Generate and build
 
 To build this project, open "Console" and type following lines:
-
 
 ``` shell
 mkdir build && cd build

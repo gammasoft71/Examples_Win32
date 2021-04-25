@@ -4,5 +4,5 @@ project(HelloWorlds)
 
 add_subdirectory(HelloWorldEmoticons)
 add_subdirectory(HelloWorldLabel)
-add_subdirectory(HelloWorldMessage)
-add_subdirectory(HelloWorldMessage2)
+add_subdirectory(HelloWorldMessageBox)
+add_subdirectory(HelloWorldMessageBox2)
