@@ -12,8 +12,8 @@ Shows how to use Win32 controls by proghramming code (c++17).
 
 ## Applications
 
-* [Application](Appllications/Application/README.md) Shows how to create an Application.
-* [ApplicationIcon](Appllications/ApplicationIcon/README.md) Shows how to create an executable with icon.
+* [Application](Applications/Application/README.md) Shows how to create an Application.
+* [ApplicationIcon](Applications/ApplicationIcon/README.md) Shows how to create an executable with icon.
 
 ## Controls
 
