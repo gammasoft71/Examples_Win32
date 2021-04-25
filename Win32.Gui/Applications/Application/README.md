@@ -8,7 +8,7 @@ This example demonstrates the use of GetMessage and DispatchMessage loop.
 
 [CMakeLists.txt](CMakeLists.txt)
 
-## Generate and build
+# Generate and build
 
 To build this project, open "Console" and type following lines:
 
