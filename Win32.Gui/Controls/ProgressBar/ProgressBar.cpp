@@ -10,7 +10,6 @@ HWND progressBar3 = nullptr;
 HWND progressBar4 = nullptr;
 HWND progressBar5 = nullptr;
 UINT_PTR timer = 0;
-int position = 0;
 WNDPROC defWndProc = nullptr;
 
 LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
@@ -19,6 +18,7 @@ LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
 }
 
 void CALLBACK OnTimerTick(HWND hwnd, UINT message, UINT_PTR idEvent, DWORD time) {
+  static int position = 0;
   position = position < 140 ? position + 1 : 0;
   SendMessage(progressBar4, PBM_SETPOS,  position, 0);
 }
