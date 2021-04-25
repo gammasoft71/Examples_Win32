@@ -7,9 +7,20 @@ HWND window = nullptr;
 HWND button = nullptr;
 WNDPROC defWndProc = nullptr;
 
+LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  if (MessageBox(window, L"Are you sure you want exit?", L"Close Form", MB_ICONQUESTION | MB_YESNO) == IDYES)
+    PostQuitMessage(0);
+  return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
+}
+
+LRESULT OnButtonClick(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  SendMessage(window, WM_CLOSE, 0, 0);
+  return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
+}
+
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  if (message == WM_CLOSE && hwnd == window && MessageBox(window, L"Are you sure you want exit?", L"Close Form", MB_ICONQUESTION | MB_YESNO) == IDYES) PostQuitMessage(0);
-  if (message == WM_COMMAND && (HWND)lParam == button) SendMessage(window, WM_CLOSE, 0, 0);
+  if (message == WM_CLOSE && hwnd == window) return OnWindowClose(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && (HWND)lParam == button) return OnButtonClick(hwnd, message, wParam, lParam);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -18,6 +29,7 @@ int main() {
   button = CreateWindowEx(0, WC_BUTTON, L"Close", WS_CHILD | WS_VISIBLE, 10, 10, 75, 25, window, nullptr, nullptr, nullptr);
  
   defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
+
   ShowWindow(window, SW_SHOW);
 
   MSG message = { 0 };
