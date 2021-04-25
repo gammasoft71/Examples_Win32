@@ -1,5 +1,15 @@
-# Application
+# TabControl2
 
-This example demonstrates the use of Gtk::Application class.
+This example demonstrates the use of TabControl and TabPage.
 
-![Screenshot](../../docs/Pictures/Application.png)
+# Source
+
+[TabControl2.cpp](TabControl2.cpp)
+
+[CMakeLists.txt](CMakeLists.txt)
+
+# Output
+
+![Screenshot](../../../docs/Pictures/TabControl2.png)
+
+

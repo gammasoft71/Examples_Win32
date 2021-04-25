@@ -1,10 +1,10 @@
 # ColoredTabPages
 
-This example demonstrates the use of Gtk::Application class.
+This example demonstrates the use of TabControl and TabPage with colors.
 
 # Sources
 
-[ColoredTabPages.cpp](./ColoredTabPages.cpp)[CMakeLists.txt](./CMakeLists.txt)
+[ColoredTabPages.cpp](ColoredTabPages.cpp)[CMakeLists.txt](CMakeLists.txt)
 # Output
 
-![Screenshot](../../docs/Pictures/ColoredTabPages.png)
+![Screenshot](../../../docs/Pictures/ColoredTabPages.png)
