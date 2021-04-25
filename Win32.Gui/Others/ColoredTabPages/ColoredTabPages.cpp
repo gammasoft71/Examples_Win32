@@ -15,7 +15,7 @@ struct TabPage {
   HBRUSH backBrush;
 };
 
-HWND form = nullptr;
+HWND window = nullptr;
 HWND tabControl1 = nullptr;
 vector<TabPage> tabPages(4);
 vector<COLORREF> tabPagesColors = { RGB(0xFF, 0, 0), RGB(0, 0x80, 0), RGB(0, 0, 0xFF), RGB(0xFF, 0xFF, 0) };
@@ -23,12 +23,12 @@ vector<wstring> tabPageNames = { L"Red", L"Green", L"Blue", L"Yellow" };
 WNDPROC defWndProc = nullptr;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  if (message == WM_CLOSE && hwnd == form) PostQuitMessage(0);
+  if (message == WM_CLOSE && hwnd == window) PostQuitMessage(0);
   if (message == WM_NOTIFY)
     for (size_t index = 0; index < tabPages.size(); index++)
       ShowWindow(tabPages[index].panel, index == SendMessage(tabControl1, TCM_GETCURSEL, 0, 0) ? SW_SHOW : SW_HIDE);
 
-  if (message == WM_CTLCOLORDLG && (HWND)lParam == form) {
+  if (message == WM_CTLCOLORDLG && (HWND)lParam == window) {
     SetBkColor((HDC)wParam, RGB(0, 0xFF, 0));
     return (LRESULT)CreateSolidBrush(RGB(0, 0xFF, 0));
   }
@@ -45,8 +45,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 }
 
 int main() {
-  form = CreateWindowEx(0, WC_DIALOG, L"TabControl example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 406, 316, nullptr, nullptr, nullptr, nullptr);
-  tabControl1 = CreateWindowEx(0, WC_TABCONTROL, nullptr, WS_CHILD | WS_VISIBLE, 10, 10, 370, 250, form, nullptr, nullptr, nullptr);
+  window = CreateWindowEx(0, WC_DIALOG, L"TabControl example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 406, 316, nullptr, nullptr, nullptr, nullptr);
+  tabControl1 = CreateWindowEx(0, WC_TABCONTROL, nullptr, WS_CHILD | WS_VISIBLE, 10, 10, 370, 250, window, nullptr, nullptr, nullptr);
   for (size_t index = 0; index < tabPages.size(); index++) {
     tabPages[index].text = tabPageNames[index];
     tabPages[index].backBrush = CreateSolidBrush(tabPagesColors[index]);
@@ -58,19 +58,19 @@ int main() {
     tabPages[index].panel = CreateWindowEx(0, WC_DIALOG, nullptr, WS_CHILD | WS_CLIPSIBLINGS, tabPageRectangle.left, tabPageRectangle.top, tabPageRectangle.right - tabPageRectangle.left, tabPageRectangle.bottom - tabPageRectangle.top, tabControl1, nullptr, nullptr, nullptr);
   }
 
-  defWndProc = (WNDPROC)SetWindowLongPtr(form, GWLP_WNDPROC, (LONG_PTR)WndProc);
+  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
 
   for (size_t index = 0; index < tabPages.size(); index++) {
     HDC deviceContext = GetDC(tabPages[index].panel);
-    SendMessage(form, WM_ERASEBKGND, (WPARAM)deviceContext, (WPARAM)tabPages[index].panel);
-    //SendMessage(form, WM_CTLCOLOR, (WPARAM)deviceContext, (WPARAM)tabPages[index].panel);
+    SendMessage(window, WM_ERASEBKGND, (WPARAM)deviceContext, (WPARAM)tabPages[index].panel);
+    //SendMessage(window, WM_CTLCOLOR, (WPARAM)deviceContext, (WPARAM)tabPages[index].panel);
     ReleaseDC(tabPages[index].panel, deviceContext);
-    RedrawWindow((HWND)form, nullptr, nullptr, RDW_INVALIDATE);
+    RedrawWindow((HWND)window, nullptr, nullptr, RDW_INVALIDATE);
   }
 
   ShowWindow(tabPages[0].panel, SW_SHOW);
 
-  ShowWindow(form, SW_SHOW);
+  ShowWindow(window, SW_SHOW);
 
   MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))

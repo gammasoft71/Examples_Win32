@@ -10,7 +10,7 @@
 using namespace std;
 using namespace literals;
 
-HWND form = nullptr;
+HWND window = nullptr;
 HWND toolbar1 = nullptr;
 HWND textBox1 = nullptr;
 WNDPROC defWndProc = nullptr;
@@ -48,12 +48,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
     auto it = items.find(static_cast<IdMenu>(LOWORD(wParam)));
     AppendLine(textBox1, (it != items.end() ? it->second : L"(unknown item)"s) + L" Clicked"s);
   }
-  if (message == WM_SIZE && hwnd == form) {
+  if (message == WM_SIZE && hwnd == window) {
     RECT rect;
-    GetClientRect(form, &rect);
+    GetClientRect(window, &rect);
     SetWindowPos(textBox1, HWND_TOP, 0, 42, rect.right - rect.left, rect.bottom - rect.top - 42, 0);
   }
-  if (message == WM_CLOSE && hwnd == form) PostQuitMessage(0);
+  if (message == WM_CLOSE && hwnd == window) PostQuitMessage(0);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -74,9 +74,9 @@ int main() {
     { MAKELONG(STD_HELP, ImageListID), static_cast<int32_t>(IdMenu::About), TBSTATE_ENABLED, BTNS_AUTOSIZE, {0}, 0, (INT_PTR)L"&About..."},
   };
 
-  form = CreateWindowEx(0, WC_DIALOG, L"Toolbar example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 640, 480, nullptr, nullptr, nullptr, nullptr);
-  toolbar1 = CreateWindowEx(0, TOOLBARCLASSNAME, nullptr, WS_CHILD | WS_VISIBLE | TBSTYLE_WRAPABLE, 0, 0, 0, 0, form, nullptr, nullptr, nullptr);
-  textBox1 = CreateWindowEx(WS_EX_CLIENTEDGE, WC_EDIT, L"", WS_CHILD | WS_VISIBLE | WS_HSCROLL | WS_VSCROLL | ES_READONLY | ES_MULTILINE | ES_WANTRETURN, 10, 10, 100, 23, form, nullptr, nullptr, nullptr);
+  window = CreateWindowEx(0, WC_DIALOG, L"Toolbar example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 640, 480, nullptr, nullptr, nullptr, nullptr);
+  toolbar1 = CreateWindowEx(0, TOOLBARCLASSNAME, nullptr, WS_CHILD | WS_VISIBLE | TBSTYLE_WRAPABLE, 0, 0, 0, 0, window, nullptr, nullptr, nullptr);
+  textBox1 = CreateWindowEx(WS_EX_CLIENTEDGE, WC_EDIT, L"", WS_CHILD | WS_VISIBLE | WS_HSCROLL | WS_VSCROLL | ES_READONLY | ES_MULTILINE | ES_WANTRETURN, 10, 10, 100, 23, window, nullptr, nullptr, nullptr);
   imageList1 = ImageList_Create(16, 16, ILC_COLOR16 | ILC_MASK, static_cast<int32_t>(toolbarButtons.size()), 0);
   
   SendMessage(toolbar1, TB_SETIMAGELIST, ImageListID, reinterpret_cast<LPARAM>(imageList1));
@@ -85,8 +85,8 @@ int main() {
   SendMessage(toolbar1, TB_ADDBUTTONS, (WPARAM)toolbarButtons.size(), (LPARAM)toolbarButtons.data());
   SendMessage(toolbar1, TB_AUTOSIZE, 0, 0);
 
-  defWndProc = (WNDPROC)SetWindowLongPtr(form, GWLP_WNDPROC, (LONG_PTR)WndProc);
-  ShowWindow(form, SW_SHOW);
+  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
+  ShowWindow(window, SW_SHOW);
 
   MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0)) {

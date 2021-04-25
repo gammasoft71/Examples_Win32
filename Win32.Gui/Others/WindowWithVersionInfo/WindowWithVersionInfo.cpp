@@ -7,7 +7,7 @@
 
 using namespace std;
 
-HWND form = nullptr;
+HWND window = nullptr;
 HWND labelCompany = nullptr;
 HWND labelProduct = nullptr;
 HWND labelVersion = nullptr;
@@ -17,7 +17,7 @@ HWND labelProductVersion = nullptr;
 WNDPROC defWndProc = nullptr;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  if (message == WM_CLOSE && hwnd == form) PostQuitMessage(0);
+  if (message == WM_CLOSE && hwnd == window) PostQuitMessage(0);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -39,16 +39,16 @@ int main() {
   VerQueryValue((LPVOID)versionData.c_str(), L"\\StringFileInfo\\000004b0\\ProductVersion", (LPVOID*)&value, (PUINT)&valueLength);
   wstring valueProductVersion(value);
 
-  form = CreateWindowEx(0, WC_DIALOG, L"Form with version info", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 316, 140, nullptr, nullptr, nullptr, nullptr);
-  labelCompany = CreateWindowEx(0, WC_STATIC, L"Company name", WS_CHILD | WS_VISIBLE, 10, 12, 105, 23, form, nullptr, nullptr, nullptr);
-  labelProduct = CreateWindowEx(0, WC_STATIC, L"Product name", WS_CHILD | WS_VISIBLE, 10, 42, 105, 23, form, nullptr, nullptr, nullptr);
-  labelVersion = CreateWindowEx(0, WC_STATIC, L"Product version", WS_CHILD | WS_VISIBLE, 10, 72, 105, 23, form, nullptr, nullptr, nullptr);
-  labelCompanyName = CreateWindowEx(WS_EX_CLIENTEDGE, WC_STATIC, valueCompanyName.c_str(), WS_CHILD | WS_VISIBLE, 120, 10, 170, 23, form, nullptr, nullptr, nullptr);
-  labelProductName = CreateWindowEx(WS_EX_CLIENTEDGE, WC_STATIC, valueProductName.c_str(), WS_CHILD | WS_VISIBLE, 120, 40, 170, 23, form, nullptr, nullptr, nullptr);
-  labelProductVersion = CreateWindowEx(WS_EX_CLIENTEDGE, WC_STATIC, valueProductVersion.c_str(), WS_CHILD | WS_VISIBLE, 120, 70, 170, 23, form, nullptr, nullptr, nullptr);
+  window = CreateWindowEx(0, WC_DIALOG, L"Form with version info", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 316, 140, nullptr, nullptr, nullptr, nullptr);
+  labelCompany = CreateWindowEx(0, WC_STATIC, L"Company name", WS_CHILD | WS_VISIBLE, 10, 12, 105, 23, window, nullptr, nullptr, nullptr);
+  labelProduct = CreateWindowEx(0, WC_STATIC, L"Product name", WS_CHILD | WS_VISIBLE, 10, 42, 105, 23, window, nullptr, nullptr, nullptr);
+  labelVersion = CreateWindowEx(0, WC_STATIC, L"Product version", WS_CHILD | WS_VISIBLE, 10, 72, 105, 23, window, nullptr, nullptr, nullptr);
+  labelCompanyName = CreateWindowEx(WS_EX_CLIENTEDGE, WC_STATIC, valueCompanyName.c_str(), WS_CHILD | WS_VISIBLE, 120, 10, 170, 23, window, nullptr, nullptr, nullptr);
+  labelProductName = CreateWindowEx(WS_EX_CLIENTEDGE, WC_STATIC, valueProductName.c_str(), WS_CHILD | WS_VISIBLE, 120, 40, 170, 23, window, nullptr, nullptr, nullptr);
+  labelProductVersion = CreateWindowEx(WS_EX_CLIENTEDGE, WC_STATIC, valueProductVersion.c_str(), WS_CHILD | WS_VISIBLE, 120, 70, 170, 23, window, nullptr, nullptr, nullptr);
 
-  defWndProc = (WNDPROC)SetWindowLongPtr(form, GWLP_WNDPROC, (LONG_PTR)WndProc);
-  ShowWindow(form, SW_SHOW);
+  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
+  ShowWindow(window, SW_SHOW);
 
   MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))

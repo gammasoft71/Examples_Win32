@@ -15,7 +15,7 @@ struct TabPage {
 };
 vector<TabPage> tabPages(4);
 
-HWND form = nullptr;
+HWND window = nullptr;
 HWND tabControl1 = nullptr;
 HWND button1 = nullptr;
 HWND label1 = nullptr;
@@ -23,7 +23,7 @@ HWND trackBar1 = nullptr;
 WNDPROC defWndProc = nullptr;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  if (message == WM_CLOSE && hwnd == form) PostQuitMessage(0);
+  if (message == WM_CLOSE && hwnd == window) PostQuitMessage(0);
   if (message == WM_NOTIFY)
     for (size_t index = 0; index < tabPages.size(); index++)
       ShowWindow(tabPages[index].panel, index == SendMessage(tabControl1, TCM_GETCURSEL, 0, 0) ? SW_SHOW : SW_HIDE);
@@ -31,8 +31,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 }
 
 int main() {
-  form = CreateWindowEx(0, WC_DIALOG, L"TabControl example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 406, 316, nullptr, nullptr, nullptr, nullptr);
-  tabControl1 = CreateWindowEx(0, WC_TABCONTROL, nullptr, WS_CHILD | WS_VISIBLE, 10, 10, 370, 250, form, nullptr, nullptr, nullptr);
+  window = CreateWindowEx(0, WC_DIALOG, L"TabControl example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 406, 316, nullptr, nullptr, nullptr, nullptr);
+  tabControl1 = CreateWindowEx(0, WC_TABCONTROL, nullptr, WS_CHILD | WS_VISIBLE, 10, 10, 370, 250, window, nullptr, nullptr, nullptr);
   for (size_t index = 0; index < tabPages.size(); index++) {
     tabPages[index].text = L"page"s + to_wstring(index + 1);
     tabPages[index].tabControlItem.mask = TCIF_TEXT;
@@ -46,11 +46,11 @@ int main() {
   label1 = CreateWindowEx(0, WC_STATIC, L"label1", WS_CHILD | WS_VISIBLE, 100, 80, 100, 23, tabPages[1].panel, nullptr, nullptr, nullptr);
   trackBar1 = CreateWindowEx(0, TRACKBAR_CLASS, nullptr, WS_CHILD | TBS_HORZ | TBS_NOTICKS | WS_VISIBLE, 10, 10, 100, 23, tabPages[3].panel, nullptr, nullptr, nullptr);
 
-  defWndProc = (WNDPROC)SetWindowLongPtr(form, GWLP_WNDPROC, (LONG_PTR)WndProc);
+  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
 
   ShowWindow(tabPages[0].panel, SW_SHOW);
 
-  ShowWindow(form, SW_SHOW);
+  ShowWindow(window, SW_SHOW);
 
   MSG message;
   while (GetMessage(&message, nullptr, 0, 0))
