@@ -18,7 +18,7 @@ LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
-void CALLBACK  OnTimerTick(HWND hwnd, UINT message, UINT_PTR idEvent, DWORD time) {
+void CALLBACK OnTimerTick(HWND hwnd, UINT message, UINT_PTR idEvent, DWORD time) {
   if (idEvent == timer) {
     static int counter = 0;
     wstringstream stream;
@@ -56,7 +56,6 @@ int main() {
 
   defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
 
-  SendMessage(window, WM_CTLCOLORSTATIC, (WPARAM)GetDC(staticText), (LPARAM)staticText);
   SendMessage(staticText, WM_SETFONT, (WPARAM)CreateFont(int(-48 / 72.0f * GetDeviceCaps(GetDC(window), LOGPIXELSY)), 0, 0, 0, FW_NORMAL, true, false, false, 0, OUT_OUTLINE_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH | FF_DONTCARE, L"Arial"), true);
 
   ShowWindow(window, SW_SHOW);
