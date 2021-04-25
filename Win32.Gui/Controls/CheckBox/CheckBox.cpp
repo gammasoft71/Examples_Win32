@@ -28,6 +28,7 @@ wstring ButtonStateToString(LRESULT state) {
 
 LRESULT OnCheckBox1Click(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   SendMessage(checkBox1, WM_SETTEXT, 0, (LPARAM)ButtonStateToString(SendMessage(checkBox1, BM_GETCHECK, 0, 0)).c_str());
+  // Uncomments next line to check / uncheck check box 1 (auto check is false...)
   //SendMessage(checkBox1, BM_SETCHECK, SendMessage(checkBox1, BM_GETCHECK, 0, 0) == BST_UNCHECKED ? BST_CHECKED : BST_UNCHECKED, 0);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
@@ -49,6 +50,7 @@ LRESULT OnCheckBox4Click(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 
 LRESULT OnCheckBox5Click(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   SendMessage(checkBox5, WM_SETTEXT, 0, (LPARAM)ButtonStateToString(SendMessage(checkBox5, BM_GETCHECK, 0, 0)).c_str());
+  // Uncomments next line to check / uncheck check box 5 (auto check is false...)
   //SendMessage(checkBox5, BM_SETCHECK, SendMessage(checkBox5, BM_GETCHECK, 0, 0) == BST_UNCHECKED ? BST_CHECKED : BST_UNCHECKED, 0);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
