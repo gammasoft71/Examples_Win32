@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(Label)
+project(StaticPicture2)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup")
 add_definitions(-DUNICODE)
 
-add_executable(${PROJECT_NAME} WIN32 Label.cpp)
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "Win32.Gui/Controls")
+add_executable(${PROJECT_NAME} WIN32 StaticPicture2.rc StaticPicture2.h StaticPicture2.cpp)
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "Win32.Gui/Others")

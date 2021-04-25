@@ -13,7 +13,7 @@ UINT_PTR timer = 0;
 int position = 0;
 WNDPROC defWndProc = nullptr;
 
-void CALLBACK  OnTimerTick(HWND hwnd, UINT message, UINT_PTR idEvent, DWORD time) {
+void CALLBACK OnTimerTick(HWND hwnd, UINT message, UINT_PTR idEvent, DWORD time) {
   position = position < 140 ? position + 1 : 0;
   SendMessage(progressBar4, PBM_SETPOS,  position, 0);
 }

@@ -20,10 +20,10 @@ Shows how to use Win32 controls by proghramming code (c++17).
 * [Button](Controls/Button/README.md) Shows how to create a Button and Event Click.
 * [CheckBox](Controls/CheckBox/README.md) Shows how to create a CheckBox.
 * [ComboBox](Controls/ComboBox/README.md) Shows how to create a ComboBox.
-* [Label](Controls/Label/README.md) Shows how to create a Label.
 * [PictureBox](Controls/PictureBox/README.md) Shows how to create a PictureBox from bitmap file.
 * [ProgressBar](Controls/ProgressBar/README.md) Shows how to create a ProgressBar.
 * [RadioButton](Controls/RadioButton/README.md) Shows how to create a RadioButton.
+* [StaticText](Controls/StaticText/README.md) Shows how to create a StaticText.
 * [TextBox](Controls/TextBox/README.md) Shows how to create a TextBox.
 * [TrackBar](Controls/TrackBar/README.md) Shows how to create a TrackBar.
 
