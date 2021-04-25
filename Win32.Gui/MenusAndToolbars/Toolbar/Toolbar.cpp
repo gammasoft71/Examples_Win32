@@ -30,12 +30,25 @@ enum class IdMenu {
   About,
 };
 
+LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  PostQuitMessage(0);
+  return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
+}
+
+LRESULT OnWindowResize(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  LRESULT result = CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
+  RECT rect;
+  GetClientRect(window, &rect);
+  SetWindowPos(textBox1, HWND_TOP, 0, 44, rect.right - rect.left, rect.bottom - rect.top - 44, 0);
+  return result;
+}
+
 wstring GetText(HWND hwnd) {
   size_t size = SendMessage(hwnd, WM_GETTEXTLENGTH, 0, 0);
   if (!size) return L"";
-   wstring text(size, '\0');
-   SendMessage(hwnd, WM_GETTEXT, (WPARAM)text.size() + 1, (LPARAM)text.c_str());
-   return text;
+  wstring text(size, '\0');
+  SendMessage(hwnd, WM_GETTEXT, (WPARAM)text.size() + 1, (LPARAM)text.c_str());
+  return text;
 }
 
 void AppendLine(HWND hwnd, const wstring& text) {
@@ -43,18 +56,17 @@ void AppendLine(HWND hwnd, const wstring& text) {
   SetWindowText(hwnd, textTextBox1.c_str());
 }
 
+LRESULT OnToolBarItemClick(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  static map<IdMenu, std::wstring> items = { {IdMenu::New, L"New"}, {IdMenu::Open, L"Open"}, {IdMenu::Save, L"Save"}, {IdMenu::Cut, L"Cut"}, {IdMenu::Copy, L"Copy"}, {IdMenu::Paste, L"Paste"}, {IdMenu::Print, L"Print"}, {IdMenu::About, L"About"} };
+  auto it = items.find(static_cast<IdMenu>(LOWORD(wParam)));
+  AppendLine(textBox1, (it != items.end() ? it->second : L"(unknown item)"s) + L" Clicked"s);
+  return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
+}
+
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && (HWND)lParam == toolbar1) {
-    static map<IdMenu, std::wstring> items = { {IdMenu::New, L"New"}, {IdMenu::Open, L"Open"}, {IdMenu::Save, L"Save"}, {IdMenu::Cut, L"Cut"}, {IdMenu::Copy, L"Copy"}, {IdMenu::Paste, L"Paste"}, {IdMenu::Print, L"Print"}, {IdMenu::About, L"About"} };
-    auto it = items.find(static_cast<IdMenu>(LOWORD(wParam)));
-    AppendLine(textBox1, (it != items.end() ? it->second : L"(unknown item)"s) + L" Clicked"s);
-  }
-  if (message == WM_SIZE && hwnd == window) {
-    RECT rect;
-    GetClientRect(window, &rect);
-    SetWindowPos(textBox1, HWND_TOP, 0, 42, rect.right - rect.left, rect.bottom - rect.top - 42, 0);
-  }
-  if (message == WM_CLOSE && hwnd == window) PostQuitMessage(0);
+  if (message == WM_CLOSE && hwnd == window) return OnWindowClose(hwnd, message, wParam, lParam);
+  if (message == WM_SIZE && hwnd == window) return OnWindowResize(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && (HWND)lParam == toolbar1) return OnToolBarItemClick(hwnd, message, wParam, lParam);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -87,6 +99,7 @@ int main() {
   SendMessage(toolbar1, TB_AUTOSIZE, 0, 0);
 
   defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
+  
   ShowWindow(window, SW_SHOW);
 
   MSG message = { 0 };
