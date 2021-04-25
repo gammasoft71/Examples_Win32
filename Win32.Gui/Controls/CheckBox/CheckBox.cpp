@@ -27,29 +27,29 @@ wstring ButtonStateToString(LRESULT state) {
 }
 
 LRESULT OnCheckBox1Click(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  SendMessage((HWND)lParam, WM_SETTEXT, 0, (LPARAM)ButtonStateToString(SendMessage((HWND)lParam, BM_GETCHECK, 0, 0)).c_str());
-  //SendMessage((HWND)lParam, BM_SETCHECK, SendMessage((HWND)lParam, BM_GETCHECK, 0, 0) == BST_UNCHECKED ? BST_CHECKED : BST_UNCHECKED, 0);
+  SendMessage(checkBox1, WM_SETTEXT, 0, (LPARAM)ButtonStateToString(SendMessage(checkBox1, BM_GETCHECK, 0, 0)).c_str());
+  //SendMessage(checkBox1, BM_SETCHECK, SendMessage(checkBox1, BM_GETCHECK, 0, 0) == BST_UNCHECKED ? BST_CHECKED : BST_UNCHECKED, 0);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
 LRESULT OnCheckBox2Click(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  SendMessage((HWND)lParam, WM_SETTEXT, 0, (LPARAM)ButtonStateToString(SendMessage((HWND)lParam, BM_GETCHECK, 0, 0)).c_str());
+  SendMessage(checkBox2, WM_SETTEXT, 0, (LPARAM)ButtonStateToString(SendMessage(checkBox2, BM_GETCHECK, 0, 0)).c_str());
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
 LRESULT OnCheckBox3Click(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  SendMessage((HWND)lParam, WM_SETTEXT, 0, (LPARAM)ButtonStateToString(SendMessage((HWND)lParam, BM_GETCHECK, 0, 0)).c_str());
+  SendMessage(checkBox3, WM_SETTEXT, 0, (LPARAM)ButtonStateToString(SendMessage(checkBox3, BM_GETCHECK, 0, 0)).c_str());
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
 LRESULT OnCheckBox4Click(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  SendMessage((HWND)lParam, WM_SETTEXT, 0, (LPARAM)ButtonStateToString(SendMessage((HWND)lParam, BM_GETCHECK, 0, 0)).c_str());
+  SendMessage(checkBox4, WM_SETTEXT, 0, (LPARAM)ButtonStateToString(SendMessage(checkBox4, BM_GETCHECK, 0, 0)).c_str());
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
 LRESULT OnCheckBox5Click(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  SendMessage((HWND)lParam, WM_SETTEXT, 0, (LPARAM)ButtonStateToString(SendMessage((HWND)lParam, BM_GETCHECK, 0, 0)).c_str());
-  //SendMessage((HWND)lParam, BM_SETCHECK, SendMessage((HWND)lParam, BM_GETCHECK, 0, 0) == BST_UNCHECKED ? BST_CHECKED : BST_UNCHECKED, 0);
+  SendMessage(checkBox5, WM_SETTEXT, 0, (LPARAM)ButtonStateToString(SendMessage(checkBox5, BM_GETCHECK, 0, 0)).c_str());
+  //SendMessage(checkBox5, BM_SETCHECK, SendMessage(checkBox5, BM_GETCHECK, 0, 0) == BST_UNCHECKED ? BST_CHECKED : BST_UNCHECKED, 0);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
