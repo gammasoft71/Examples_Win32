@@ -1,13 +1,13 @@
 # Panel
 
-This example demonstrates the use of Panel control.
+This example demonstrates the use of Panel caontainer.
 
 # Source
 
-[Panel.cpp](./Panel.cpp)
+[Panel.cpp](Panel.cpp)
 
-[CMakeLists.txt](./CMakeLists.txt)
+[CMakeLists.txt](CMakeLists.txt)
 
 # Output
 
-![Screenshot](../../docs/Pictures/Panel.png)
+![Screenshot](../../../docs/Pictures/Panel.png)

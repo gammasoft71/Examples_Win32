@@ -1,13 +1,13 @@
-# Button
+# MessageBox
 
-This example demonstrates the use of Button control.
+This example demonstrates the use of MessageBox dialog.
 
 # Source
 
-[Button.cpp](./Button.cpp)
+[MessageBox.cpp](MessageBox.cpp)
 
-[CMakeLists.txt](./CMakeLists.txt)
+[CMakeLists.txt](CMakeLists.txt)
 
 # Output
 
-![Screenshot](../../docs/Pictures/Button.png)
+![Screenshot](../../../docs/Pictures/MessageBox.png)

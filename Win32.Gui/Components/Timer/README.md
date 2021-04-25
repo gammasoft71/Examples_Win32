@@ -1,13 +1,13 @@
 # Timer
 
-This example demonstrates the use of Timer control.
+This example demonstrates the use of Timer componant.
 
 # Source
 
-[Timer.cpp](./Timer.cpp)
+[Timer.cpp](Timer.cpp)
 
-[CMakeLists.txt](./CMakeLists.txt)
+[CMakeLists.txt](CMakeLists.txt)
 
 # Output
 
-![Screenshot](../../docs/Pictures/Timer.png)
+![Screenshot](../../../docs/Pictures/Timer.png)

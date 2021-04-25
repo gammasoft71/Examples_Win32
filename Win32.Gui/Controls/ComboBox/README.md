@@ -4,10 +4,10 @@ This example demonstrates the use of ComboBox control.
 
 # Source
 
-[ComboBox.cpp](./ComboBox.cpp)
+[ComboBox.cpp](ComboBox.cpp)
 
-[CMakeLists.txt](./CMakeLists.txt)
+[CMakeLists.txt](CMakeLists.txt)
 
 # Output
 
-![Picture](../../docs/Pictures/ComboBox.png)
+![Picture](../../../docs/Pictures/ComboBox.png)

@@ -24,9 +24,9 @@ Shows how to use Win32 controls by proghramming code (c++17).
 * [TextBox](Controls/TextBox/README.md) Shows how to create a TextBox.
 * [TrackBar](Controls/TrackBar/README.md) Shows how to create a TrackBar.
 
-## Forms
+## Windows
 
-* [Form](Forms/Form/README.md) Shows how to create a Form.
+* [Window](Windowd/Window/README.md) Shows how to create a Window.
 
 ## Containers
 
