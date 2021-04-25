@@ -31,14 +31,15 @@ enum class IdMenu {
 };
 
 wstring GetText(HWND hwnd) {
-  wstring text(SendMessage(hwnd, WM_GETTEXTLENGTH, 0, 0) + 1, '\0');
-  SendMessage(hwnd, WM_GETTEXT, (WPARAM)text.size(), (LPARAM)text.c_str());
-  return text;
+  size_t size = SendMessage(hwnd, WM_GETTEXTLENGTH, 0, 0);
+  if (!size) return L"";
+   wstring text(size, '\0');
+   SendMessage(hwnd, WM_GETTEXT, (WPARAM)text.size() + 1, (LPARAM)text.c_str());
+   return text;
 }
 
 void AppendLine(HWND hwnd, const wstring& text) {
-  static wstring textTextBox1;
-  textTextBox1 += text + L"\r\n"s;
+  wstring textTextBox1 = GetText(hwnd) + text + L"\r\n"s;
   SetWindowText(hwnd, textTextBox1.c_str());
 }
 
