@@ -72,7 +72,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 
 int main() {
   constexpr size_t ImageListID = 0;
-
   vector<TBBUTTON> toolbarButtons{
     { MAKELONG(STD_FILENEW,  ImageListID), static_cast<int32_t>(IdMenu::New), TBSTATE_ENABLED, BTNS_AUTOSIZE, {0}, 0, (INT_PTR)L"&New" },
     { MAKELONG(STD_FILEOPEN, ImageListID), static_cast<int32_t>(IdMenu::Open), TBSTATE_ENABLED, BTNS_AUTOSIZE, {0}, 0, (INT_PTR)L"&Open..."},
