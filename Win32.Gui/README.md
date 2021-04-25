@@ -20,9 +20,9 @@ Shows how to use Win32 controls by proghramming code (c++17).
 * [Button](Controls/Button/README.md) Shows how to create a Button and Event Click.
 * [CheckBox](Controls/CheckBox/README.md) Shows how to create a CheckBox.
 * [ComboBox](Controls/ComboBox/README.md) Shows how to create a ComboBox.
-* [PictureBox](Controls/PictureBox/README.md) Shows how to create a PictureBox from bitmap file.
 * [ProgressBar](Controls/ProgressBar/README.md) Shows how to create a ProgressBar.
 * [RadioButton](Controls/RadioButton/README.md) Shows how to create a RadioButton.
+* [StaticPicture](Controls/StaticPicture/README.md) Shows how to create a SttaticPicture from bitmap file.
 * [StaticText](Controls/StaticText/README.md) Shows how to create a StaticText.
 * [TextBox](Controls/TextBox/README.md) Shows how to create a TextBox.
 * [TrackBar](Controls/TrackBar/README.md) Shows how to create a TrackBar.
@@ -63,7 +63,7 @@ Shows how to use Win32 controls by proghramming code (c++17).
 ## Other
 
 * [ColoredTabPages](Others/Others/ColoredTabPages/README.md) Shows how to create a TabControl with colored TabPages with.
-* [PictureBox2](Others/PictureBox2/README.md) Shows how to create a PictureBox from bitmap resource.
+* [StaticPicture2](Others/StaticPicture2/README.md) Shows how to create a StaticPicture from bitmap resource.
 * [TabControl2](Others/TabControl2/README.md) Shows how to create a TabControl.
 * [WindowWithVersionInfo](Others/WindowWithVersionInfo/README.md) Shows how to create a Form wtih version informations.
 
