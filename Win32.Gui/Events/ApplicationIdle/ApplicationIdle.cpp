@@ -11,14 +11,18 @@ using namespace std::chrono_literals;
 HWND window = nullptr;
 WNDPROC defWndProc = nullptr;
 
+LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  PostQuitMessage(0);
+  return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
+}
+
 void OnApplicationIdle() {
   static int counter = 0;
   SendMessage(window, WM_SETTEXT, 0, (LPARAM)to_wstring(++counter).c_str());
 }
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  if (message == WM_CLOSE) PostQuitMessage(0);
-  if (message == WM_ENTERIDLE) OnApplicationIdle();
+  if (message == WM_CLOSE && hwnd == window) return OnWindowClose(hwnd, message, wParam, lParam);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
