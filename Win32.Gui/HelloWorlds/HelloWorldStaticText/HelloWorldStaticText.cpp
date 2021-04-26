@@ -35,7 +35,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 }
 
 int main() {
-  window = CreateWindowEx(0, WC_DIALOG, L"Hello world (StaticText)", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 316, 330, nullptr, nullptr, nullptr, nullptr);
+  window = CreateWindowEx(0, WC_DIALOG, L"Hello world (StaticText)", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 316, 340, nullptr, nullptr, nullptr, nullptr);
   staticText = CreateWindowEx(0, WC_STATIC, L"Hello, World!", WS_CHILD | WS_VISIBLE | SS_SIMPLE, 5, 100, 280, 52, window, nullptr, nullptr, nullptr);
 
   defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
