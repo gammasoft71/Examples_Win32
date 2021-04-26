@@ -61,12 +61,12 @@ int main() {
   radioButton3 = CreateWindowEx(0, WC_BUTTON, L"Radio 3", WS_CHILD | BS_AUTORADIOBUTTON | WS_VISIBLE, 30, 90, 104, 24, window, nullptr, nullptr, nullptr);
   radioButton4 = CreateWindowEx(0, WC_BUTTON, L"Radio 4", WS_CHILD | BS_AUTORADIOBUTTON | BS_PUSHLIKE | WS_VISIBLE, 30, 120, 104, 24, window, nullptr, nullptr, nullptr);
   radioButton5 = CreateWindowEx(0, WC_BUTTON, L"Radio 5", WS_CHILD | BS_RADIOBUTTON | BS_PUSHLIKE | WS_VISIBLE, 30, 150, 104, 24, window, nullptr, nullptr, nullptr);
-  staticText1 = CreateWindowEx(0, WC_STATIC, L"", WS_CHILD | WS_VISIBLE | SS_SIMPLE, 20, 180, 200, 23, window, nullptr, nullptr, nullptr);
+  staticText1 = CreateWindowEx(0, WC_STATIC, L"", WS_CHILD | WS_VISIBLE, 20, 180, 200, 23, window, nullptr, nullptr, nullptr);
 
   defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
 
   SendMessage(radioButton3, BM_SETCHECK, BST_CHECKED, 0);
-  SendMessage(staticText1, WM_SETTEXT, 0, (LPARAM)(L"Radio 3 checked = "s + (SendMessage(radioButton3, BM_GETCHECK, 0, 0) == BST_CHECKED ? L"true   "s : L"false   "s)).c_str());
+  SendMessage(staticText1, WM_SETTEXT, 0, (LPARAM)(L"Radio 3 checked = "s + (SendMessage(radioButton3, BM_GETCHECK, 0, 0) == BST_CHECKED ? L"true"s : L"false"s)).c_str());
 
   ShowWindow(window, SW_SHOW);
 

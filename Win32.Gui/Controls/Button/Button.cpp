@@ -44,8 +44,8 @@ int main() {
   window = CreateWindowEx(0, WC_DIALOG, L"Button example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 300, 300, nullptr, nullptr, nullptr, nullptr);
   button1 = CreateWindowEx(0, WC_BUTTON, L"button1", WS_CHILD | WS_VISIBLE, 50, 50, 75, 25, window, nullptr, nullptr, nullptr);
   button2 = CreateWindowEx(0, WC_BUTTON, L"button2", WS_CHILD | WS_VISIBLE, 50, 100, 200, 75, window, nullptr, nullptr, nullptr);
-  staticText1 = CreateWindowEx(0, WC_STATIC, L"button1 clicked 0 times", WS_CHILD | WS_VISIBLE | SS_SIMPLE, 50, 200, 200, 23, window, nullptr, nullptr, nullptr);
-  staticText2 = CreateWindowEx(0, WC_STATIC, L"button2 clicked 0 times", WS_CHILD | WS_VISIBLE | SS_SIMPLE, 50, 230, 200, 23, window, nullptr, nullptr, nullptr);
+  staticText1 = CreateWindowEx(0, WC_STATIC, L"button1 clicked 0 times", WS_CHILD | WS_VISIBLE, 50, 200, 200, 23, window, nullptr, nullptr, nullptr);
+  staticText2 = CreateWindowEx(0, WC_STATIC, L"button2 clicked 0 times", WS_CHILD | WS_VISIBLE, 50, 230, 200, 23, window, nullptr, nullptr, nullptr);
   
   defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
   ShowWindow(window, SW_SHOW);

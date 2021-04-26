@@ -51,7 +51,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 
 int main() {
   window = CreateWindowEx(0, WC_DIALOG, L"Timer example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 246, 176, nullptr, nullptr, nullptr, nullptr);
-  staticText = CreateWindowEx(0, WC_STATIC, L"0.0", WS_CHILD | WS_VISIBLE | SS_SIMPLE, 10, 10, 210, 70, window, nullptr, nullptr, nullptr);
+  staticText = CreateWindowEx(0, WC_STATIC, L"0.0", WS_CHILD | WS_VISIBLE, 10, 10, 210, 70, window, nullptr, nullptr, nullptr);
   button = CreateWindowEx(0, WC_BUTTON, L"Start", WS_CHILD | WS_VISIBLE, 10, 100, 75, 25, window, nullptr, nullptr, nullptr);
 
   defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
