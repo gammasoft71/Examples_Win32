@@ -16,8 +16,13 @@ HWND labelProductName = nullptr;
 HWND labelProductVersion = nullptr;
 WNDPROC defWndProc = nullptr;
 
+LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  PostQuitMessage(0);
+  return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
+}
+
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  if (message == WM_CLOSE && hwnd == window) PostQuitMessage(0);
+  if (message == WM_CLOSE && hwnd == window) return OnWindowClose(hwnd, message, wParam, lParam);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
