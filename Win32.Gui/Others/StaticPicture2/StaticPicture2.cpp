@@ -16,7 +16,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 }
 
 int main() {
-  window = CreateWindowEx(0, WC_DIALOG, L"PictureBox example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 316, 340, nullptr, nullptr, nullptr, nullptr);
+  window = CreateWindowEx(0, WC_DIALOG, L"StaticPicture2 example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 316, 340, nullptr, nullptr, nullptr, nullptr);
   panel1 = CreateWindowEx(0, WC_DIALOG, nullptr, WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_BORDER, 10, 10, 280, 280, window, nullptr, nullptr, nullptr);
   pictureBox1 = CreateWindowEx(0, WC_STATIC, L"", WS_CHILD | WS_VISIBLE | SS_BITMAP, 12, 12, 280, 280, panel1, nullptr, nullptr, nullptr);
   picture = LoadBitmap(GetModuleHandle(nullptr), MAKEINTRESOURCE(ID_BITMAP_LOGO));
