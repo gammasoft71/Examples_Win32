@@ -64,6 +64,8 @@ Shows how to use Win32 controls by proghramming code (c++17).
 ## Other
 
 * [ColoredTabPages](Others/Others/ColoredTabPages/README.md) Shows how to create a TabControl with colored TabPages with.
+* [GroupBoxAndCheckBox](Others/GroupBoxAndCheckBox/README.md) demonstrates the use of GroupBox container and CheckBox control.
+* [GroupBoxAndRadioButton](Others/GroupBoxAndRadioButton/README.md) demonstrates the use of GroupBox container and [RadioButton control.
 * [StaticPicture2](Others/StaticPicture2/README.md) Shows how to create a StaticPicture from bitmap resource.
 * [TabControl2](Others/TabControl2/README.md) Shows how to create a TabControl.
 * [WindowWithVersionInfo](Others/WindowWithVersionInfo/README.md) Shows how to create a Form wtih version informations.
