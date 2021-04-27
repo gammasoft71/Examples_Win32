@@ -3,7 +3,6 @@
 #include <map>
 #include <string>
 #include <Windows.h>
-#include <Windowsx.h>
 #include <CommCtrl.h>
 
 using namespace std;
