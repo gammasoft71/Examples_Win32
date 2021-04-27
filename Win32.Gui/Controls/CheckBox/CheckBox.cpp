@@ -27,7 +27,7 @@ wstring ButtonStateToString(LRESULT state) {
 }
 
 LRESULT OnAutoCheckBoxClick(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  SendMessage((HWND)lParam, WM_SETTEXT, 0, (LPARAM)ButtonStateToString(SendMessage((HWND)lParam, BM_GETCHECK, 0, 0)).c_str());
+  SendMessage((HWND)lParam, WM_SETTEXT, 0, reinterpret_cast<LPARAM>(ButtonStateToString(SendMessage((HWND)lParam, BM_GETCHECK, 0, 0)).c_str()));
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -45,11 +45,11 @@ LRESULT OnCheckBox5Click(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == window) return OnWindowClose(hwnd, message, wParam, lParam);
-  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && (HWND)lParam == checkBox1) return OnCheckBox1Click(hwnd, message, wParam, lParam);
-  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && (HWND)lParam == checkBox2) return OnAutoCheckBoxClick(hwnd, message, wParam, lParam);
-  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && (HWND)lParam == checkBox3) return OnAutoCheckBoxClick(hwnd, message, wParam, lParam);
-  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && (HWND)lParam == checkBox4) return OnAutoCheckBoxClick(hwnd, message, wParam, lParam);
-  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && (HWND)lParam == checkBox5) return OnCheckBox5Click(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && reinterpret_cast<HWND>(lParam) == checkBox1) return OnCheckBox1Click(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && reinterpret_cast<HWND>(lParam) == checkBox2) return OnAutoCheckBoxClick(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && reinterpret_cast<HWND>(lParam) == checkBox3) return OnAutoCheckBoxClick(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && reinterpret_cast<HWND>(lParam) == checkBox4) return OnAutoCheckBoxClick(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && reinterpret_cast<HWND>(lParam) == checkBox5) return OnCheckBox5Click(hwnd, message, wParam, lParam);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -61,17 +61,15 @@ int main() {
   checkBox4 = CreateWindowEx(0, WC_BUTTON, L"Checked", WS_CHILD | BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_VISIBLE, 30, 120, 104, 24, window, nullptr, nullptr, nullptr);
   checkBox5 = CreateWindowEx(0, WC_BUTTON, L"Unchecked", WS_CHILD | BS_CHECKBOX | BS_PUSHLIKE | WS_VISIBLE, 30, 150, 104, 24, window, nullptr, nullptr, nullptr);
 
-  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
-
+  defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc)));
   SendMessage(checkBox1, BM_SETCHECK, BST_UNCHECKED, 0);
   SendMessage(checkBox2, BM_SETCHECK, BST_CHECKED, 0);
   SendMessage(checkBox3, BM_SETCHECK, BST_INDETERMINATE, 0);
   SendMessage(checkBox4, BM_SETCHECK, BST_CHECKED, 0);
-
   ShowWindow(window, SW_SHOW);
 
   MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
-  return (int)message.wParam;
+  )return static_cast<int>(message.wParam;
 }

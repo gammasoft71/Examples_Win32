@@ -42,19 +42,19 @@ int main() {
   for (size_t index = 0; index < tabPages.size(); index++) {
     tabPages[index].text = L"tabPage"s + to_wstring(index + 1);
     tabPages[index].tabControlItem.mask = TCIF_TEXT;
-    tabPages[index].tabControlItem.pszText = (LPWSTR)tabPages[index].text.c_str();
+    tabPages[index].tabControlItem.pszText = const_cast<LPWSTR>(tabPages[index].text.c_str());
     TabCtrl_InsertItem(tabControl1, TabCtrl_GetItemCount(tabControl1), &tabPages[index].tabControlItem);
-    RECT tabPageRectangle{ 0, 0, 370, 250 };
-    SendMessage(tabControl1, TCM_ADJUSTRECT, false, (LPARAM)&tabPageRectangle);
+    RECT tabPageRectangle { 0, 0, 370, 250 };
+    SendMessage(tabControl1, TCM_ADJUSTRECT, false, reinterpret_cast<LPARAM>(&tabPageRectangle));
     tabPages[index].panel = CreateWindowEx(0, WC_DIALOG, nullptr, WS_CHILD | WS_CLIPSIBLINGS, tabPageRectangle.left, tabPageRectangle.top, tabPageRectangle.right - tabPageRectangle.left, tabPageRectangle.bottom - tabPageRectangle.top, tabControl1, nullptr, nullptr, nullptr);
   }
 
-  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
+  defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc)));
   ShowWindow(tabPages[0].panel, SW_SHOW);
   ShowWindow(window, SW_SHOW);
 
   MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
-  return (int)message.wParam;
+  return static_cast<int>(message.wParam);
 }

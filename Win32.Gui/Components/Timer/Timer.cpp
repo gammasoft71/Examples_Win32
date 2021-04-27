@@ -20,23 +20,23 @@ LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
 
 void CALLBACK OnTimerTick(HWND hwnd, UINT message, UINT_PTR idEvent, DWORD time) {
   if (idEvent == timer) {
-    static int counter = 0;
+    static auto counter = 0;
     wstringstream stream;
-    stream << fixed << setprecision(1) << (double)++counter / 10;
-    SendMessage(staticText, WM_SETTEXT, 0, (LPARAM)stream.str().c_str());
+    stream << fixed << setprecision(1) << static_cast<double>(++counter) / 10;
+    SendMessage(staticText, WM_SETTEXT, 0, reinterpret_cast<LPARAM>(stream.str().c_str()));
   }
 }
 
 LRESULT ChangeStaticTextColor(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  LRESULT result = CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
-  SetTextColor((HDC)wParam, RGB(30, 144, 255));
+  auto result = CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
+  SetTextColor(reinterpret_cast<HDC>(wParam), RGB(30, 144, 255));
   return result;
 }
 
 LRESULT OnButtonClick(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  static bool enableTimer = false;
+  static auto enableTimer = false;
   enableTimer = !enableTimer;
-  SendMessage(button, WM_SETTEXT, 0, enableTimer ? (LPARAM)L"Stop" : (LPARAM)L"Start");
+  SendMessage(button, WM_SETTEXT, 0, reinterpret_cast<LPARAM>(enableTimer ? L"Stop" : L"Start"));
   if (enableTimer) timer = SetTimer(nullptr, 0, 100, OnTimerTick);
   else KillTimer(nullptr, timer);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
@@ -44,8 +44,8 @@ LRESULT OnButtonClick(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == window) return OnWindowClose(hwnd, message, wParam, lParam);
-  if (message == WM_COMMAND && (HWND)lParam == button) return OnButtonClick(hwnd, message, wParam, lParam);
-  if (message == WM_CTLCOLORSTATIC && (HWND)lParam == staticText) return ChangeStaticTextColor(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && reinterpret_cast<HWND>(lParam) == button) return OnButtonClick(hwnd, message, wParam, lParam);
+  if (message == WM_CTLCOLORSTATIC && reinterpret_cast<HWND>(lParam) == staticText) return ChangeStaticTextColor(hwnd, message, wParam, lParam);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -54,14 +54,12 @@ int main() {
   staticText = CreateWindowEx(0, WC_STATIC, L"0.0", WS_CHILD | WS_VISIBLE, 10, 10, 210, 70, window, nullptr, nullptr, nullptr);
   button = CreateWindowEx(0, WC_BUTTON, L"Start", WS_CHILD | WS_VISIBLE, 10, 100, 75, 25, window, nullptr, nullptr, nullptr);
 
-  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
-
-  SendMessage(staticText, WM_SETFONT, (WPARAM)CreateFont(int(-48 / 72.0f * GetDeviceCaps(GetDC(window), LOGPIXELSY)), 0, 0, 0, FW_NORMAL, true, false, false, 0, OUT_OUTLINE_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH | FF_DONTCARE, L"Arial"), true);
-
+  defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc)));
+  SendMessage(staticText, WM_SETFONT, reinterpret_cast<WPARAM>(CreateFont(static_cast<int>(-48 / 72.0f * GetDeviceCaps(GetDC(window), LOGPIXELSY)), 0, 0, 0, FW_NORMAL, true, false, false, 0, OUT_OUTLINE_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH | FF_DONTCARE, L"Arial")), true);
   ShowWindow(window, SW_SHOW);
 
   MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
-  return (int)message.wParam;
+  return static_cast<int>(message.wParam);
 }

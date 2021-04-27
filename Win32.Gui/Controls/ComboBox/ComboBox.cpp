@@ -17,8 +17,8 @@ LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
 
 LRESULT OnComboBoxChange(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   static LRESULT selected_index = -1;
-  if (selected_index != SendMessage((HWND)lParam, CB_GETCURSEL, 0, 0)) {
-    selected_index = SendMessage((HWND)lParam, CB_GETCURSEL, 0, 0);
+  if (selected_index != SendMessage(reinterpret_cast<HWND>(lParam), CB_GETCURSEL, 0, 0)) {
+    selected_index = SendMessage(reinterpret_cast<HWND>(lParam), CB_GETCURSEL, 0, 0);
     SendMessage(comboBox1, CB_SETCURSEL, selected_index, 0);
     SendMessage(comboBox2, CB_SETCURSEL, selected_index, 0);
     SendMessage(comboBox3, CB_SETCURSEL, selected_index, 0);
@@ -28,9 +28,9 @@ LRESULT OnComboBoxChange(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == window) return OnWindowClose(hwnd, message, wParam, lParam);
-  if (message == WM_COMMAND && HIWORD(wParam) == CBN_SELCHANGE && (HWND)lParam == comboBox1) return OnComboBoxChange(hwnd, message, wParam, lParam);
-  if (message == WM_COMMAND && HIWORD(wParam) == CBN_SELCHANGE && (HWND)lParam == comboBox2) return OnComboBoxChange(hwnd, message, wParam, lParam);
-  if (message == WM_COMMAND && HIWORD(wParam) == CBN_SELCHANGE && (HWND)lParam == comboBox3) return OnComboBoxChange(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && HIWORD(wParam) == CBN_SELCHANGE && reinterpret_cast<HWND>(lParam) == comboBox1) return OnComboBoxChange(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && HIWORD(wParam) == CBN_SELCHANGE && reinterpret_cast<HWND>(lParam) == comboBox2) return OnComboBoxChange(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && HIWORD(wParam) == CBN_SELCHANGE && reinterpret_cast<HWND>(lParam) == comboBox3) return OnComboBoxChange(hwnd, message, wParam, lParam);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -48,8 +48,7 @@ int main() {
   SendMessage(comboBox1, CB_SETCURSEL, 1, 0);
   SendMessage(comboBox2, CB_SETCURSEL, 1, 0);
   SendMessage(comboBox3, CB_SETCURSEL, 1, 0);
-
-  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
+  defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc)));
   ShowWindow(window, SW_SHOW);
 
   MSG message = { 0 };
@@ -57,5 +56,5 @@ int main() {
     TranslateMessage(&message);
     DispatchMessage(&message);
   }
-  return (int)message.wParam;
+  return static_cast<int>(message.wParam);
 }

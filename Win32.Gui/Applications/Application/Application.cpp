@@ -18,11 +18,11 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 int main() {
   window = CreateWindowEx(0, WC_DIALOG, L"", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 300, 300, nullptr, nullptr, nullptr, nullptr);
 
-  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
+  defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc)));
   ShowWindow(window, SW_SHOW);
 
   MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
-  return (int)message.wParam;
+  return static_cast<int>(message.wParam);
 }

@@ -23,11 +23,11 @@ int main() {
   panel1 = CreateWindowEx(0, WC_DIALOG, nullptr, WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_BORDER, 10, 10, 305, 460, window, nullptr, nullptr, nullptr);
   panel2 = CreateWindowEx(WS_EX_CLIENTEDGE, WC_DIALOG, nullptr, WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS, 325, 10, 305, 460, window, nullptr, nullptr, nullptr);
 
-  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
+  defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc)));
   ShowWindow(window, SW_SHOW);
 
   MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
-  return (int)message.wParam;
+  return static_cast<int>(message.wParam);
 }
