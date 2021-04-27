@@ -13,8 +13,8 @@ HWND buttonShowMessage = nullptr;
 WNDPROC defWndProc = nullptr;
 
 void AboutBox(const wstring& title, const wstring& name, const wstring& description, const wstring& version, const wstring& copyright) {
-  static const wstring separator(86, ' ');
-  MessageBox(nullptr, (name + L"\n" + version + L"\n" + separator + L"\n" + copyright + L"\n" + description + L"\n" + separator).c_str(), title.c_str(), MB_OK | MB_ICONINFORMATION);
+  static const wstring lineSeparator(86, ' ');
+  MessageBox(nullptr, (name + L"\n" + version + L"\n" + lineSeparator + L"\n" + copyright + L"\n" + description + L"\n" + lineSeparator).c_str(), title.c_str(), MB_OK | MB_ICONINFORMATION);
 }
 
 LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
