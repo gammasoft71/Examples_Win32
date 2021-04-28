@@ -29,5 +29,4 @@ int main() {
   MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
-  return static_cast<int>(message.wParam);
 }

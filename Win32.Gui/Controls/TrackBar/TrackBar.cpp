@@ -20,13 +20,13 @@ LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
 LRESULT OnTrackBarChanged(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   LRESULT value = SendMessage(trackBar, TBM_GETPOS, 0, 0);
   SendMessage(progressBar, PBM_SETPOS, value, 0);
-  SendMessage(staticText, WM_SETTEXT, 0, (LPARAM)to_wstring(value).c_str());
+  SendMessage(staticText, WM_SETTEXT, 0, reinterpret_cast<LPARAM>(to_wstring(value).c_str()));
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == window) return OnWindowClose(hwnd, message, wParam, lParam);
-  if (message == WM_HSCROLL && hwnd == window && (HWND)lParam == trackBar) return OnTrackBarChanged(hwnd, message, wParam, lParam);
+  if (message == WM_HSCROLL && hwnd == window && reinterpret_cast<HWND>(lParam) == trackBar) return OnTrackBarChanged(hwnd, message, wParam, lParam);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -36,7 +36,7 @@ int main() {
   progressBar = CreateWindowEx(0, PROGRESS_CLASS, nullptr, WS_CHILD | PBS_SMOOTH | WS_VISIBLE, 20, 100, 200, 23, window, nullptr, nullptr, nullptr);
   staticText = CreateWindowEx(0, WC_STATIC, L"100", WS_CHILD | WS_VISIBLE, 20, 150, 100, 23, window, nullptr, nullptr, nullptr);
 
-  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
+  defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc)));
 
   SendMessage(trackBar, TBM_SETRANGEMIN, 1, 0);
   SendMessage(trackBar, TBM_SETRANGEMAX, 1, 200);
@@ -49,5 +49,4 @@ int main() {
   MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
-  return (int)message.wParam;
 }

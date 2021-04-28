@@ -18,7 +18,7 @@ LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
 }
 
 void CALLBACK OnTimerTick(HWND hwnd, UINT message, UINT_PTR idEvent, DWORD time) {
-  static int position = 0;
+  static auto position = 0;
   position = position < 140 ? position + 1 : 0;
   SendMessage(progressBar4, PBM_SETPOS,  position, 0);
 }
@@ -37,7 +37,7 @@ int main() {
   progressBar5 = CreateWindowEx(0, PROGRESS_CLASS, nullptr, WS_CHILD | PBS_MARQUEE | WS_VISIBLE, 50, 170, 200, 23, window, nullptr, nullptr, nullptr);
   timer = SetTimer(nullptr, 0, 50, OnTimerTick);
 
-  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
+  defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc)));
 
   SendMessage(progressBar2, PBM_SETPOS, 50, 0);
   SendMessage(progressBar3, PBM_SETRANGE32, 0, 300);
@@ -50,5 +50,4 @@ int main() {
   MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
-  return (int)message.wParam;
 }

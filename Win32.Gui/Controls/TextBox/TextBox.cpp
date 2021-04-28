@@ -20,16 +20,16 @@ LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
 std::wstring GetText(HWND hwnd) {
   size_t size = SendMessage(hwnd, WM_GETTEXTLENGTH, 0, 0);
   if (!size) return L"";
-  wstring text(size, '\0');
-  SendMessage(hwnd, WM_GETTEXT, (WPARAM)text.size() + 1, (LPARAM)text.c_str());
+  auto text = wstring(size, '\0');
+  SendMessage(hwnd, WM_GETTEXT, text.size() + 1, reinterpret_cast<LPARAM>(text.c_str()));
   return text;
 }
 
 LRESULT OnTextChanged(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  wstring text = GetText((HWND)lParam);
+  auto text = GetText(reinterpret_cast<HWND>(lParam));
   for (auto textBox : {textBox1, textBox2})
     if (GetText(textBox) != text)
-      SendMessage(textBox, WM_SETTEXT, 0, (LPARAM)text.c_str());
+      SendMessage(textBox, WM_SETTEXT, 0, reinterpret_cast<LPARAM>(text.c_str()));
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -44,7 +44,7 @@ int main() {
   textBox1 = CreateWindowEx(WS_EX_CLIENTEDGE, WC_EDIT, L"textBox", WS_CHILD | WS_VISIBLE, 10, 10, 100, 23, window, nullptr, nullptr, nullptr);
   textBox2 = CreateWindowEx(WS_EX_CLIENTEDGE, WC_EDIT, L"textBox", WS_CHILD | WS_VISIBLE, 10, 50, 100, 23, window, nullptr, nullptr, nullptr);
 
-  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
+  defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc)));
   ShowWindow(window, SW_SHOW);
 
   MSG message = { 0 };
@@ -52,5 +52,4 @@ int main() {
     TranslateMessage(&message);
     DispatchMessage(&message);
   }
-  return (int)message.wParam;
 }

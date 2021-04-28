@@ -56,5 +56,4 @@ int main() {
     TranslateMessage(&message);
     DispatchMessage(&message);
   }
-  return static_cast<int>(message.wParam);
 }

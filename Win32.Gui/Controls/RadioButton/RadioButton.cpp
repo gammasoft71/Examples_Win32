@@ -24,7 +24,7 @@ LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
 }
 
 LRESULT OnAutoRadioButtonClick(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  SendMessage(staticText1, WM_SETTEXT, 0, (LPARAM)(L"Radio 3 checked = "s + (SendMessage(radioButton3, BM_GETCHECK, 0, 0) == BST_CHECKED ? L"true   "s : L"false   "s)).c_str());
+  SendMessage(staticText1, WM_SETTEXT, 0, reinterpret_cast<LPARAM>((L"Radio 3 checked = "s + (SendMessage(radioButton3, BM_GETCHECK, 0, 0) == BST_CHECKED ? L"true   "s : L"false   "s)).c_str()));
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -46,11 +46,11 @@ LRESULT OnRadioButton5Click(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPara
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == window) return OnWindowClose(hwnd, message, wParam, lParam);
-  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && (HWND)lParam == radioButton1) return OnRadioButton1Click(hwnd, message, wParam, lParam);
-  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && (HWND)lParam == radioButton2) return OnAutoRadioButtonClick(hwnd, message, wParam, lParam);
-  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && (HWND)lParam == radioButton3) return OnAutoRadioButtonClick(hwnd, message, wParam, lParam);
-  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && (HWND)lParam == radioButton4) return OnAutoRadioButtonClick(hwnd, message, wParam, lParam);
-  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && (HWND)lParam == radioButton5) return OnRadioButton5Click(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && reinterpret_cast<HWND>(lParam) == radioButton1) return OnRadioButton1Click(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && reinterpret_cast<HWND>(lParam) == radioButton2) return OnAutoRadioButtonClick(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && reinterpret_cast<HWND>(lParam) == radioButton3) return OnAutoRadioButtonClick(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && reinterpret_cast<HWND>(lParam) == radioButton4) return OnAutoRadioButtonClick(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && reinterpret_cast<HWND>(lParam) == radioButton5) return OnRadioButton5Click(hwnd, message, wParam, lParam);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -63,15 +63,14 @@ int main() {
   radioButton5 = CreateWindowEx(0, WC_BUTTON, L"Radio 5", WS_CHILD | BS_RADIOBUTTON | BS_PUSHLIKE | WS_VISIBLE, 30, 150, 104, 24, window, nullptr, nullptr, nullptr);
   staticText1 = CreateWindowEx(0, WC_STATIC, L"", WS_CHILD | WS_VISIBLE, 20, 180, 200, 23, window, nullptr, nullptr, nullptr);
 
-  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
+  defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc)));
 
   SendMessage(radioButton3, BM_SETCHECK, BST_CHECKED, 0);
-  SendMessage(staticText1, WM_SETTEXT, 0, (LPARAM)(L"Radio 3 checked = "s + (SendMessage(radioButton3, BM_GETCHECK, 0, 0) == BST_CHECKED ? L"true"s : L"false"s)).c_str());
+  SendMessage(staticText1, WM_SETTEXT, 0, reinterpret_cast<LPARAM>((L"Radio 3 checked = "s + (SendMessage(radioButton3, BM_GETCHECK, 0, 0) == BST_CHECKED ? L"true"s : L"false"s)).c_str()));
 
   ShowWindow(window, SW_SHOW);
 
   MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
-  return (int)message.wParam;
 }
