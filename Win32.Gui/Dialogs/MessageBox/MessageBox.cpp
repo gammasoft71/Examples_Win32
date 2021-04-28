@@ -25,14 +25,14 @@ wstring DialogResultTostring(int32_t ddialogResult) {
 }
 
 LRESULT OnButtonClick(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  wstring result = L"DialogResult = "s + DialogResultTostring(MessageBox(window, L"Hello, World!", L"Message", MB_OKCANCEL | MB_ICONWARNING));
-  SendMessage(staticTextDialogResult, WM_SETTEXT, 0, (LPARAM)result.c_str());
+  auto result = L"DialogResult = "s + DialogResultTostring(MessageBox(window, L"Hello, World!", L"Message", MB_OKCANCEL | MB_ICONWARNING));
+  SendMessage(staticTextDialogResult, WM_SETTEXT, 0, reinterpret_cast<LPARAM>(result.c_str()));
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == window) return OnWindowClose(hwnd, message, wParam, lParam);
-  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && (HWND)lParam == buttonShowMessage) return OnButtonClick(hwnd, message, wParam, lParam);
+  if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && reinterpret_cast<HWND>(lParam) == buttonShowMessage) return OnButtonClick(hwnd, message, wParam, lParam);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -41,11 +41,10 @@ int main() {
   buttonShowMessage = CreateWindowEx(0, WC_BUTTON, L"Message...", WS_CHILD | WS_VISIBLE, 10, 10, 80, 25, window, nullptr, nullptr, nullptr);
   staticTextDialogResult = CreateWindowEx(0, WC_STATIC, L"", WS_CHILD | WS_VISIBLE, 10, 45, 200, 23, window, nullptr, nullptr, nullptr);
   
-  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
+  defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc)));
   ShowWindow(window, SW_SHOW);
 
   MSG message = {0};
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
-  return (int)message.wParam;
 }
