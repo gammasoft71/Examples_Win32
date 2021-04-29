@@ -1,10 +1,10 @@
-# FolderBrowser
+# FolderBrowserDialog
 
 This example demonstrates the use of FolderBrowser dialog.
 
 # Source
 
-[FolderBrowser.cpp](FolderBrowser.cpp)
+[FolderBrowserDialog.cpp](FolderBrowserDialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -15,11 +15,11 @@ To build this project, open "Console" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start FolderBrowser.sln
+start FolderBrowserDialog.sln
 ```
 
-Select "FolderBrowser" project and type Ctrl+F5 to build and run it.
+Select "FolderBrowserDialog" project and type Ctrl+F5 to build and run it.
 
 # Output
 
-![Screenshot](../../../docs/Pictures/FolderBrowser.png)
+![Screenshot](../../../docs/Pictures/FolderBrowserDialog.png)
