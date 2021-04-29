@@ -12,7 +12,7 @@ The classic first application HelloWorld width Cpp Unit Test Framework
 
 To build this project, open "Console" and type following lines:
 
-````
+```
 mkdir build && cd build
 cmake .. 
 start HelloWorldTest.sln
