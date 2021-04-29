@@ -1,6 +1,6 @@
 # HelloWorldTest
 
-The classic first application HelloWorld width Cpp Unit Testt Framework
+The classic first application HelloWorld width Cpp Unit Test Framework
 
 # Source
 
