@@ -31,6 +31,7 @@ LRESULT OnButtonClick(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   openFileName.nFilterIndex =1;
 
   std::wstring fileName(MAX_PATH, ' ');
+  lstrcpyW(fileName.data(), selectedFile.c_str());
   openFileName.lpstrFile = (LPWSTR)fileName.c_str();
   openFileName.nMaxFile = MAX_PATH;  
   openFileName.lpstrInitialDir = iInitialDirectory;

@@ -13,7 +13,7 @@ HWND window = nullptr;
 HWND button1 = nullptr;
 HWND staticText1 = nullptr;
 WNDPROC defWndProc = nullptr;
-wstring selectedPath;
+wstring selectedFile;
 
 LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   PostQuitMessage(0);
@@ -21,19 +21,27 @@ LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
 }
 
 LRESULT OnButtonClick(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  BROWSEINFO browserInfo = { 0 };
-  browserInfo.hwndOwner = hwnd;
-  browserInfo.lParam = reinterpret_cast<LPARAM>(selectedPath.c_str());
-  browserInfo.lpszTitle = L"Select a folder";
+  wchar_t iInitialDirectory[MAX_PATH];
+  SHGetSpecialFolderPath(nullptr, iInitialDirectory, CSIDL_DESKTOP, false);
 
-  browserInfo.ulFlags = BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
+  OPENFILENAME openFileName = { 0 };
+  openFileName.lStructSize = sizeof(openFileName);
+  openFileName.hwndOwner = hwnd;
+  openFileName.lpstrFilter = L"Text Files (*.txt)\0*.txt\0All Files (*.*)\0*.*";
+  openFileName.nFilterIndex = 1;
 
-  PCIDLIST_ABSOLUTE result = SHBrowseForFolder(&browserInfo);
+  std::wstring fileName(MAX_PATH, ' ');
+  lstrcpyW(fileName.data(), selectedFile.c_str());
+  openFileName.lpstrFile = (LPWSTR)fileName.c_str();
+  openFileName.nMaxFile = MAX_PATH;
+  openFileName.lpstrInitialDir = iInitialDirectory;
+  openFileName.Flags = OFN_CREATEPROMPT;
+  openFileName.lpstrDefExt = L"txt";
+
+  BOOL result = GetSaveFileName(&openFileName);
   if (result) {
-    wchar_t path[MAX_PATH];
-    SHGetPathFromIDList(result, path);
-    selectedPath = path;
-    SendMessage(staticText1, WM_SETTEXT, 0, reinterpret_cast<LPARAM>((L"Path = "s + selectedPath).c_str()));
+    selectedFile = fileName;
+    SendMessage(staticText1, WM_SETTEXT, 0, reinterpret_cast<LPARAM>((L"File = "s + selectedFile).c_str()));
   }
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
@@ -45,14 +53,14 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 }
 
 int main() {
-  window = CreateWindowEx(0, WC_DIALOG, L"FolderBrowserDialog exemple", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 300, 300, nullptr, nullptr, nullptr, nullptr);
-  button1 = CreateWindowEx(0, WC_BUTTON, L"Folder...", WS_CHILD | WS_VISIBLE, 10, 10, 80, 25, window, nullptr, nullptr, nullptr);
-  staticText1 = CreateWindowEx(0, WC_STATIC, L"Path = ", WS_CHILD | WS_VISIBLE, 10, 45, 274, 215, window, nullptr, nullptr, nullptr);
-  
+  window = CreateWindowEx(0, WC_DIALOG, L"SaveFileDialog exemple", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 300, 300, nullptr, nullptr, nullptr, nullptr);
+  button1 = CreateWindowEx(0, WC_BUTTON, L"Save...", WS_CHILD | WS_VISIBLE, 10, 10, 80, 25, window, nullptr, nullptr, nullptr);
+  staticText1 = CreateWindowEx(0, WC_STATIC, L"File = ", WS_CHILD | WS_VISIBLE, 10, 45, 274, 215, window, nullptr, nullptr, nullptr);
+
   defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc)));
   ShowWindow(window, SW_SHOW);
 
-  MSG message = {0};
+  MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
     DispatchMessage(&message);
 }
