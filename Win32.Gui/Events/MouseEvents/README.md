@@ -1,10 +1,10 @@
-# KeyEvents
+# MouseEvents
 
 This example demonstrates the use of key events.
 
 # Source
 
-[KeyEvents.cpp](KeyEvents.cpp)
+[MouseEvents.cpp](MouseEvents.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -15,11 +15,11 @@ To build this project, open "Console" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start KeyEvents.sln
+start MouseEvents.sln
 ```
 
-Select "KeyEvents" project and type Ctrl+F5 to build and run it.
+Select "MouseEvents" project and type Ctrl+F5 to build and run it.
 
 # Output
 
-![GitHub Logo](../../../docs/Pictures/KeyEvents.png)
+![GitHub Logo](../../../docs/Pictures/MouseEvents.png)
