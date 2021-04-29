@@ -1,13 +1,22 @@
-# Application
+# HelloWorldTest
 
-This example demonstrates the use of GetMessage and DispatchMessage loop.
+The classic first application HelloWorld width Cpp Unit Testt Framework
 
 # Source
 
-[Application.cpp](./Application.cpp)
+[HelloWorldTest.cpp](./HelloWorldTest.cpp)
 
 [CMakeLists.txt](./CMakeLists.txt)
 
-# Output
+# Generate and build
 
-![Screenshot](../../docs/Pictures/Application.png)
+To build this project, open "Console" and type following lines:
+
+````
+mkdir build && cd build
+cmake .. 
+start HelloWorldTest.sln
+```
+
+Select "HelloWorldTest" project and type Ctrl+F5 to build and run it.
+
