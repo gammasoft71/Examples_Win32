@@ -1,4 +1,4 @@
-﻿# Win32 ExamplesShows how to use Win32 api by proghramming code (c++17).[![win32](docs/pictures/win32_header.png)](https://gammasoft71.wixsite.com/gammasoft/win32)## System
+﻿# Win32 ExamplesShows how to use Win32 api by proghramming code (c++17).[![win32](docs/Pictures/win32_header.png)](https://gammasoft71.wixsite.com/gammasoft/win32)## System
 
 [Win32.System](./Win32.System/README.md) contains Win32 System examples.## Gui
 
