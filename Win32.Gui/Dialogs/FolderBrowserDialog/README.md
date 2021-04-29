@@ -1,6 +1,6 @@
 # FolderBrowserDialog
 
-This example demonstrates the use of FolderBrowser dialog.
+This example demonstrates the use of FolderBrowserDialog dialog.
 
 # Source
 

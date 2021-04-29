@@ -22,25 +22,41 @@ vector<COLORREF> tabPagesColors = { RGB(0xFF, 0, 0), RGB(0, 0x80, 0), RGB(0, 0, 
 vector<wstring> tabPageNames = { L"Red", L"Green", L"Blue", L"Yellow" };
 WNDPROC defWndProc = nullptr;
 
-LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  if (message == WM_CLOSE && hwnd == window) PostQuitMessage(0);
-  if (message == WM_NOTIFY)
-    for (size_t index = 0; index < tabPages.size(); index++)
-      ShowWindow(tabPages[index].panel, index == SendMessage(tabControl1, TCM_GETCURSEL, 0, 0) ? SW_SHOW : SW_HIDE);
+LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  PostQuitMessage(0);
+  return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
+}
 
-  if (message == WM_CTLCOLORDLG && (HWND)lParam == window) {
-    SetBkColor((HDC)wParam, RGB(0, 0xFF, 0));
-    return (LRESULT)CreateSolidBrush(RGB(0, 0xFF, 0));
-  }
-
-  if (message == WM_CTLCOLORDLG || message == WM_CTLCOLOR)
-    for (size_t index = 0; index < tabPages.size(); index++) {
-      if (tabPages[index].panel == (HWND)lParam) {
-        SetBkColor((HDC)wParam, tabPagesColors[index]);
-        return (LRESULT)CreateSolidBrush(tabPagesColors[index]);
-      }
+LRESULT OnWindowNotify(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  for (size_t index = 0; index < tabPages.size(); index++) {
+    size_t currentPageIndex = SendMessage(tabControl1, TCM_GETCURSEL, 0, 0);
+    ShowWindow(tabPages[index].panel, index == currentPageIndex ? SW_SHOW : SW_HIDE);
+    if (index == currentPageIndex) {
+      RECT rect;
+      GetClientRect(tabPages[index].panel, &rect);
+      InvalidateRect(tabPages[index].panel, &rect, true);
     }
- 
+  }
+  RECT rect;
+  GetClientRect(window, &rect);
+  InvalidateRect(window, &rect, true);
+  return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
+}
+
+LRESULT OnPaint(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  for (auto& tabPage : tabPages)
+    /*if (hwnd == tabPages[0].panel)*/ {
+      RECT rect;
+      GetClientRect(tabPage.panel, &rect);
+      FillRect(GetDC(tabPage.panel), &rect, tabPage.backBrush);
+    }
+return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
+}
+
+LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  if (message == WM_CLOSE && hwnd == window) return OnWindowClose(hwnd, message, wParam, lParam);
+  if (message == WM_NOTIFY) return OnWindowNotify(hwnd, message, wParam, lParam);
+  if (message == WM_PAINT) return OnPaint(hwnd, message, wParam, lParam);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -55,20 +71,11 @@ int main() {
     TabCtrl_InsertItem(tabControl1, TabCtrl_GetItemCount(tabControl1), &tabPages[index].tabControlItem);
     RECT tabPageRectangle{ 0, 0, 370, 250 };
     SendMessage(tabControl1, TCM_ADJUSTRECT, false, (LPARAM)&tabPageRectangle);
-    tabPages[index].panel = CreateWindowEx(0, WC_DIALOG, nullptr, WS_CHILD | WS_CLIPSIBLINGS, tabPageRectangle.left, tabPageRectangle.top, tabPageRectangle.right - tabPageRectangle.left, tabPageRectangle.bottom - tabPageRectangle.top, tabControl1, nullptr, nullptr, nullptr);
+    tabPages[index].panel = CreateWindowEx(0, WC_DIALOG, nullptr, WS_CHILD | WS_CLIPSIBLINGS | WS_VISIBLE, tabPageRectangle.left, tabPageRectangle.top, tabPageRectangle.right - tabPageRectangle.left, tabPageRectangle.bottom - tabPageRectangle.top, tabControl1, nullptr, nullptr, nullptr);
+    SetBkColor(GetDC(tabPages[index].panel), tabPagesColors[index]);
   }
 
   defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
-
-  for (size_t index = 0; index < tabPages.size(); index++) {
-    HDC deviceContext = GetDC(tabPages[index].panel);
-    SendMessage(window, WM_ERASEBKGND, (WPARAM)deviceContext, (WPARAM)tabPages[index].panel);
-    //SendMessage(window, WM_CTLCOLOR, (WPARAM)deviceContext, (WPARAM)tabPages[index].panel);
-    ReleaseDC(tabPages[index].panel, deviceContext);
-    RedrawWindow((HWND)window, nullptr, nullptr, RDW_INVALIDATE);
-  }
-
-  ShowWindow(tabPages[0].panel, SW_SHOW);
 
   ShowWindow(window, SW_SHOW);
 
