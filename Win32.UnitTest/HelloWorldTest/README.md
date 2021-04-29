@@ -18,8 +18,8 @@ cmake ..
 start HelloWorldTest.sln
 ```
 
-Open "Test/Test Explorer" with Ctrl+E,t and type Ctrl+R,v to build and run all tests.
+Open "Test/Test Explorer" with Ctrl+E,t, select "HelloWorldRTest" test and type Ctrl+R,t to build and run tests.
 
 # Output
 
-![Screenshot](../../../docs/Pictures/HelloWorldTest.png)
+![Screenshot](../../docs/Pictures/HelloWorldTest.png)
