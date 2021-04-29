@@ -1,3 +1,2 @@
-# Win32.UnitTest ExamplesShows how to use Win32 UnitTest (c++17).## Hello World* [HelloWorldTest](HelloWorldTest/README.md) The classic first application HelloWorld.## Generate and buildTo build this project, open "Console" and type following lines:``` shellmkdir build && cd buildcmake .. start Win32.Gui.Examples.sln```
-Open "Test/Test Explorer" with Ctrl+E,t and type Ctrl+R,v to build and run all tests.
-# Output![Screenshot](../../../docs/Pictures/HelloWorldTest.png)
+# Win32.UnitTest ExamplesShows how to use Win32 UnitTest (c++17).## Hello World* [HelloWorldTest](HelloWorldTest/README.md) The classic first application HelloWorld.## Generate and buildTo build this project, open "Console" and type following lines:``` shellmkdir build && cd buildcmake .. start Win32.UnitTest.Examples.sln```
+Open "Test/Test Explorer" with Ctrl+E,t and type Ctrl+R,v to build and run all tests.## RemarksThis project run only on Windows with [Visual Studio](https://www.visualstudio.com) and [CMake](https://cmake.org).
