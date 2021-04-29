@@ -60,7 +60,8 @@ Shows how to use Win32 controls by proghramming code (c++17).
 ## Events
 
 * [ApplicationIdle](Events/ApplicationIdle/README.md) Shows how to create an Application and Idle event.
-
+* [KeyEvents](Events/KeyEvents/README.md) demonstrates the use of key events.
+* [MouseEvents](Events/MouseEvents/README.md) demonstrates the use of mouse events.
 
 ## Other
 
