@@ -4,7 +4,7 @@ This example demonstrates the use of GroupBox container and RadioButton controls
 
 # Source
 
-[v.cpp](GroupBoxAndRadioButton.cpp)
+[GroupBoxAndRadioButton.cpp](GroupBoxAndRadioButton.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
