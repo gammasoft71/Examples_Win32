@@ -37,7 +37,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 }
 
 int main() {
-  window = CreateWindowEx(0, WC_DIALOG, L"Message box exemple", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 300, 300, nullptr, nullptr, nullptr, nullptr);
+  window = CreateWindowEx(0, WC_DIALOG, L"MessageBox exemple", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 300, 300, nullptr, nullptr, nullptr, nullptr);
   buttonShowMessage = CreateWindowEx(0, WC_BUTTON, L"Message...", WS_CHILD | WS_VISIBLE, 10, 10, 80, 25, window, nullptr, nullptr, nullptr);
   staticTextDialogResult = CreateWindowEx(0, WC_STATIC, L"", WS_CHILD | WS_VISIBLE, 10, 45, 200, 23, window, nullptr, nullptr, nullptr);
   
