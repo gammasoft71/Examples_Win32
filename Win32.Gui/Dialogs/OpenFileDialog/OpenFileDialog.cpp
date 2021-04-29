@@ -40,7 +40,7 @@ LRESULT OnButtonClick(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   BOOL result = GetOpenFileName(&openFileName);
   if (result) {
     selectedFile = fileName;
-    SendMessage(staticText1, WM_SETTEXT, 0, reinterpret_cast<LPARAM>(selectedFile.c_str()));
+    SendMessage(staticText1, WM_SETTEXT, 0, reinterpret_cast<LPARAM>((L"File = "s + selectedFile).c_str()));
   }
  return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
@@ -54,7 +54,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 int main() {
   window = CreateWindowEx(0, WC_DIALOG, L"OpenFileDialog exemple", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 300, 300, nullptr, nullptr, nullptr, nullptr);
   button1 = CreateWindowEx(0, WC_BUTTON, L"Open...", WS_CHILD | WS_VISIBLE, 10, 10, 80, 25, window, nullptr, nullptr, nullptr);
-  staticText1 = CreateWindowEx(0, WC_STATIC, L"", WS_CHILD | WS_VISIBLE, 10, 45, 274, 215, window, nullptr, nullptr, nullptr);
+  staticText1 = CreateWindowEx(0, WC_STATIC, L"File = ", WS_CHILD | WS_VISIBLE, 10, 45, 274, 215, window, nullptr, nullptr, nullptr);
   
   defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc)));
   ShowWindow(window, SW_SHOW);
