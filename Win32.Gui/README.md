@@ -54,6 +54,7 @@ Shows how to use Win32 controls by proghramming code (c++17).
 * [FontDialog](Dialogs/FontDialog/README.md) Shows how to create a FontDialog.
 * [MessageBox](Dialogs/MessageBox/README.md) Shows how to create a MessageBox.
 * [OpenFileDialog](Dialogs/OpenFileDialog/README.md) Shows how to create an OpenFileDialog.
+* [PageSetupDialog](Dialogs/PageSetupDialog/README.md) Shows how to create a PageSetupDialog.
 * [SaveFileDialog](Dialogs/SaveFileDialog/README.md) Shows how to create a SaveFileDialog.
 
 ## Components
