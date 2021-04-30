@@ -12,6 +12,7 @@ using namespace std::literals;
 HWND window = nullptr;
 HWND button1 = nullptr;
 WNDPROC defWndProc = nullptr;
+PAGESETUPDLG currentPageSetup = { 0 };
 
 LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   PostQuitMessage(0);
@@ -19,12 +20,14 @@ LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
 }
 
 LRESULT OnButtonClick(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  PAGESETUPDLG pageSetup = { 0 };
-  pageSetup.lStructSize = sizeof(pageSetup);
-  pageSetup.hwndOwner = hwnd;
-  pageSetup.Flags = PSD_DEFAULTMINMARGINS;
-  if (PageSetupDlg(&pageSetup) != 0) {
+  PAGESETUPDLG pageSetup = currentPageSetup;
+  if (currentPageSetup.lStructSize == 0) {
+    pageSetup.lStructSize = sizeof(pageSetup);
+    pageSetup.hwndOwner = hwnd;
+    pageSetup.Flags = PSD_DEFAULTMINMARGINS | PSD_INHUNDREDTHSOFMILLIMETERS;
   }
+  if (PageSetupDlg(&pageSetup) != 0)
+    currentPageSetup = pageSetup;
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
