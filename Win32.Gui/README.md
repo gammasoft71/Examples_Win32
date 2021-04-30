@@ -3,6 +3,8 @@
 
 Shows how to use Win32 controls by proghramming code (c++17).
 
+[![win32](../docs/Pictures/win32_header.png)](https://gammasoft71.wixsite.com/gammasoft/win32)
+
 ## Hello Worlds
 
 * [HelloWorldEmoticons](HelloWorlds/HelloWorldEmoticons/README.md) The classic first application HelloWorld width emoticons.
