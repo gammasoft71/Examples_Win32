@@ -55,6 +55,7 @@ Shows how to use Win32 controls by proghramming code (c++17).
 * [MessageBox](Dialogs/MessageBox/README.md) Shows how to create a MessageBox.
 * [OpenFileDialog](Dialogs/OpenFileDialog/README.md) Shows how to create an OpenFileDialog.
 * [PageSetupDialog](Dialogs/PageSetupDialog/README.md) Shows how to create a PageSetupDialog.
+* [PrintDialog](Dialogs/PrintDialog/README.md) Shows how to create a PrintDialog.
 * [ReplaceDialog](Dialogs/ReplaceDialog/README.md) Shows how to create a ReplaceDialog.
 * [SaveFileDialog](Dialogs/SaveFileDialog/README.md) Shows how to create a SaveFileDialog.
 
