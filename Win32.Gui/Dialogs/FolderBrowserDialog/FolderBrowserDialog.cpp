@@ -20,9 +20,18 @@ LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
+int CALLBACK OnBrowserCalllback(HWND hwnd, UINT message, LPARAM lParam, LPARAM data) {
+  if (message == BFFM_INITIALIZED && !wstring(reinterpret_cast<wchar_t*>(data)).empty())
+    SendMessage(hwnd, BFFM_SETSELECTION, 1, data);
+  return 0;
+}
+
 LRESULT OnButtonClick(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   BROWSEINFO browserInfo = { 0 };
   browserInfo.hwndOwner = hwnd;
+  PIDLIST_ABSOLUTE pidlRoot;
+  SHGetSpecialFolderLocation(hwnd, CSIDL_DESKTOP, &pidlRoot);
+  browserInfo.lpfn = OnBrowserCalllback;
   browserInfo.lParam = reinterpret_cast<LPARAM>(selectedPath.c_str());
   browserInfo.lpszTitle = L"Select a folder";
 
