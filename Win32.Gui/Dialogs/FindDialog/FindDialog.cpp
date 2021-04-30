@@ -13,39 +13,31 @@ HWND button1 = nullptr;
 HWND findReplaceDialog = nullptr;
 WNDPROC defWndProc = nullptr;
 wstring findWhat = L"Gammasoft";
-wstring replaceWith = L"Gammasoftt71";
-UINT UM_FIND_REPLACE_BUTTON_CLICKED = RegisterWindowMessage(FINDMSGSTRING);
+UINT UM_FIND_BUTTON_CLICKED = RegisterWindowMessage(FINDMSGSTRING);
 
 LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   PostQuitMessage(0);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
-UINT_PTR OnFindReplace(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+UINT_PTR OnFind(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   FINDREPLACE* findReplace = reinterpret_cast<FINDREPLACE*>(lParam);
   if ((findReplace->Flags & FR_DIALOGTERM) == FR_DIALOGTERM) OutputDebugString(L"Cancel dialog\n");
   if ((findReplace->Flags & FR_FINDNEXT) == FR_FINDNEXT) OutputDebugString((L"Find next \""s + findReplace->lpstrFindWhat + L"\"\n"s).c_str());
-  if ((findReplace->Flags & FR_REPLACE) == FR_REPLACE) OutputDebugString((L"Replace \""s + findReplace->lpstrFindWhat + L"\" with \""s + findReplace->lpstrReplaceWith + L"\"\n"s).c_str());
-  if ((findReplace->Flags & FR_REPLACEALL) == FR_REPLACEALL) OutputDebugString((L"Replace all \""s + findReplace->lpstrFindWhat + L"\" with \""s + findReplace->lpstrReplaceWith + L"\"\n"s).c_str());
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 LRESULT OnButtonClick(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   static wchar_t findWhatBuffer[1024];
-  static wchar_t replaceWithBuffer[1024];
 
   lstrcpyW(findWhatBuffer, findWhat.c_str());
-  lstrcpyW(replaceWithBuffer, replaceWith.c_str());
 
   static FINDREPLACE findReplace = { 0 };
   findReplace.lStructSize = sizeof(findReplace);
   findReplace.hwndOwner = hwnd;
-  findReplace.Flags = FR_DOWN | FR_FINDNEXT | FR_MATCHCASE | FR_REPLACE | FR_REPLACEALL | FR_WHOLEWORD;
+  findReplace.Flags = FR_DOWN | FR_FINDNEXT | FR_MATCHCASE | FR_WHOLEWORD;
   findReplace.lpstrFindWhat = findWhatBuffer;
   findReplace.wFindWhatLen = 1024;
-  findReplace.lpstrReplaceWith = replaceWithBuffer;
-  findReplace.wReplaceWithLen = 1024;
-  findReplace.lpfnHook = OnFindReplace;
-  findReplaceDialog = ReplaceText(&findReplace);
+  findReplaceDialog = FindText(&findReplace);
 
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
@@ -53,13 +45,13 @@ LRESULT OnButtonClick(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == window) return OnWindowClose(hwnd, message, wParam, lParam);
   if (message == WM_COMMAND && HIWORD(wParam) == BN_CLICKED && reinterpret_cast<HWND>(lParam) == button1) return OnButtonClick(hwnd, message, wParam, lParam);
-  if (message == UM_FIND_REPLACE_BUTTON_CLICKED && hwnd == window) return OnFindReplace(hwnd, message, wParam, lParam);
+  if (message == UM_FIND_BUTTON_CLICKED && hwnd == window) return OnFind(hwnd, message, wParam, lParam);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
 int main() {
-  window = CreateWindowEx(0, WC_DIALOG, L"FindReplaceDialog exemple", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 300, 300, nullptr, nullptr, nullptr, nullptr);
-  button1 = CreateWindowEx(0, WC_BUTTON, L"Find...", WS_CHILD | WS_VISIBLE, 10, 10, 80, 25, window, nullptr, nullptr, nullptr);
+  window = CreateWindowEx(0, WC_DIALOG, L"FindDialog exemple", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 300, 300, nullptr, nullptr, nullptr, nullptr);
+  button1 = CreateWindowEx(0, WC_BUTTON, L"Find...", WS_CHILD | WS_VISIBLE, 10, 10, 75, 25, window, nullptr, nullptr, nullptr);
   
   defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc)));
   ShowWindow(window, SW_SHOW);
