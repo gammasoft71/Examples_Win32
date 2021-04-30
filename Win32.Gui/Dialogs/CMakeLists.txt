@@ -4,6 +4,7 @@ project(Dialogs)
 
 add_subdirectory(AboutBox)
 add_subdirectory(ColorDialog)
+add_subdirectory(FindReplaceDialog)
 add_subdirectory(FolderBrowserDialog)
 add_subdirectory(FontDialog)
 add_subdirectory(MessageBox)
