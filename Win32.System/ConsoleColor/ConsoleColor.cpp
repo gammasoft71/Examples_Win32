@@ -45,7 +45,7 @@ int main() {
     else
       WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"     ", 5, nullptr, nullptr);
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_BLUE);
-    WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), logo[index].c_str(), static_cast<int32_t>(logo[index].size()-1), nullptr, nullptr);
+    WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), logo[index].c_str(), static_cast<int32_t>(logo[index].size()), nullptr, nullptr);
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
     WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), L"\n", 1, nullptr, nullptr);
   }
