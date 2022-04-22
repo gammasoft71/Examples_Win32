@@ -1,13 +1,18 @@
-# Application
+# StringConversion
 
-This example demonstrates the use of GetMessage and DispatchMessage loop.
+This example demonstrates the use of std::wcstombs and std::mbstowcs functions.
 
 # Source
 
-[Application.cpp](./Application.cpp)
+[StringConversion.cpp](./StringConversion.cpp)
 
 [CMakeLists.txt](./CMakeLists.txt)
 
 # Output
 
-![GitHub Logo](../../docs/Pictures/Application.png)
+```
+Hello, World1 !
+Hello, World2 !
+Hello, World3 !
+Hello, World4 !
+
