@@ -1,13 +1,17 @@
-# Application
+# Console
 
-This example demonstrates the use of GetMessage and DispatchMessage loop.
+This example demonstrates the use of WriteConsole and ReadConsole functions.
 
 # Source
 
-[Application.cpp](./Application.cpp)
+[Console.cpp](./Console.cpp)
 
 [CMakeLists.txt](./CMakeLists.txt)
 
 # Output
 
-![Screenshot](../../docs/Pictures/Application.png)
+```
+Hello World!
+Enter your name: James
+Good day, James!
+
