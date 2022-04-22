@@ -1,13 +1,9 @@
-# Application
+# Process
 
-This example demonstrates the use of GetMessage and DispatchMessage loop.
+This example demonstrates the use of CreateProcess function.
 
 # Source
 
-[Application.cpp](./Application.cpp)
+[Process.cpp](./Process.cpp)
 
 [CMakeLists.txt](./CMakeLists.txt)
-
-# Output
-
-![GitHub Logo](../../docs/Pictures/Application.png)
