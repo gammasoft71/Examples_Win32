@@ -9,7 +9,7 @@ Shows how to use Win32 System api by proghramming code (c++17).
 
 * [HelloWorld](HelloWorld/README.md) The classic first application HelloWorld.
 
-## Consoole
+## Console
 
 * [Console](Console/README.md) Shows how to use Window Console.
 * [ConsoleColor](ConsoleColor/README.md) Shows how to use colors with Window Console.
