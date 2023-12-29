@@ -4,6 +4,4 @@ project(Win32.Examples)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-add_subdirectory("Win32.System")
-add_subdirectory("Win32.Gui")
-add_subdirectory("Win32.UnitTest")
+add_subdirectory("src")

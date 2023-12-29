@@ -1,7 +1,7 @@
 
 # Win32.System Examples
 
-Shows how to use Win32 System api by proghramming code (c++17).
+Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) System api by proghramming code ([c++17](https://en.cppreference.com/w/)).
 
 [![win32](../docs/Pictures/win32_header.png)](https://gammasoft71.wixsite.com/gammasoft/win32)
 
