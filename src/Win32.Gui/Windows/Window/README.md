@@ -22,4 +22,4 @@ Select "Window" project and type Ctrl+F5 to build and run it.
 
 # Output
 
-![Screenshot](../../../docs/Pictures/Window.png)
+![Screenshot](../../../../docs/Pictures/Window.png)

@@ -22,4 +22,4 @@ Select "GroupBoxAndRadioButton" project and type Ctrl+F5 to build and run it.
 
 # Output
 
-![Screenshot](../../../docs/Pictures/GroupBoxAndRadioButton.png)
+![Screenshot](../../../../docs/Pictures/GroupBoxAndRadioButton.png)

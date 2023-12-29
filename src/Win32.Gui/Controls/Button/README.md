@@ -22,4 +22,4 @@ Select "Button" project and type Ctrl+F5 to build and run it.
 
 # Output
 
-![Screenshot](../../../docs/Pictures/Button.png)
+![Screenshot](../../../../docs/Pictures/Button.png)

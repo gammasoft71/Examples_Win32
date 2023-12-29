@@ -22,4 +22,4 @@ Select "ComboBox" project and type Ctrl+F5 to build and run it.
 
 # Output
 
-![Picture](../../../docs/Pictures/ComboBox.png)
+![Picture](../../../../docs/Pictures/ComboBox.png)

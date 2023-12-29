@@ -22,4 +22,4 @@ Select "RadioButton" project and type Ctrl+F5 to build and run it.
 
 # Output
 
-![Screenshot](../../../docs/Pictures/RadioButton.png)
+![Screenshot](../../../../docs/Pictures/RadioButton.png)

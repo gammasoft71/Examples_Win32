@@ -22,4 +22,4 @@ Select "MouseEvents" project and type Ctrl+F5 to build and run it.
 
 # Output
 
-![GitHub Logo](../../../docs/Pictures/MouseEvents.png)
+![GitHub Logo](../../../../docs/Pictures/MouseEvents.png)

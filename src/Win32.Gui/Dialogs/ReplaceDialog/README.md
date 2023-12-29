@@ -22,4 +22,4 @@ Select "ReplaceDialog" project and type Ctrl+F5 to build and run it.
 
 # Output
 
-![Screenshot](../../../docs/Pictures/ReplaceDialog.png)
+![Screenshot](../../../../docs/Pictures/ReplaceDialog.png)

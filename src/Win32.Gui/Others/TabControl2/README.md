@@ -22,6 +22,6 @@ Select "TabControl2" project and type Ctrl+F5 to build and run it.
 
 # Output
 
-![Screenshot](../../../docs/Pictures/TabControl2.png)
+![Screenshot](../../../../docs/Pictures/TabControl2.png)
 
 

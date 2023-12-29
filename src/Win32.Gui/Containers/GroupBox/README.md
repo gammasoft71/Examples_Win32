@@ -22,4 +22,4 @@ Select "GroupBox" project and type Ctrl+F5 to build and run it.
 
 # Output
 
-![Screenshot](../../../docs/Pictures/GroupBox.png)
+![Screenshot](../../../../docs/Pictures/GroupBox.png)

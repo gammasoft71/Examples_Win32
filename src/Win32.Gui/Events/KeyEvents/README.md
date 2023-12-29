@@ -22,4 +22,4 @@ Select "KeyEvents" project and type Ctrl+F5 to build and run it.
 
 # Output
 
-![GitHub Logo](../../../docs/Pictures/KeyEvents.png)
+![GitHub Logo](../../../../docs/Pictures/KeyEvents.png)

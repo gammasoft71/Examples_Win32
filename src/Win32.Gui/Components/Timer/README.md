@@ -22,4 +22,4 @@ Select "Timer" project and type Ctrl+F5 to build and run it.
 
 # Output
 
-![Screenshot](../../../docs/Pictures/Timer.png)
+![Screenshot](../../../../docs/Pictures/Timer.png)

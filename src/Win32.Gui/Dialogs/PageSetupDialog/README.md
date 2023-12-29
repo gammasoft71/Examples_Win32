@@ -22,4 +22,4 @@ Select "PageSetupDialog" project and type Ctrl+F5 to build and run it.
 
 # Output
 
-![Screenshot](../../../docs/Pictures/PageSetupDialog.png)
+![Screenshot](../../../../docs/Pictures/PageSetupDialog.png)

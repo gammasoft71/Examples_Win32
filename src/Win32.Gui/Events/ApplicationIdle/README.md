@@ -22,4 +22,4 @@ Select "ApplicationIdle" project and type Ctrl+F5 to build and run it.
 
 # Output
 
-![GitHub Logo](../../../docs/Pictures/ApplicationIdle.png)
+![GitHub Logo](../../../../docs/Pictures/ApplicationIdle.png)
