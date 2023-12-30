@@ -2,13 +2,13 @@
 
 This example demonstrates the use of key events.
 
-# Source
+## Sources
 
 [MouseEvents.cpp](MouseEvents.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start MouseEvents.sln
 
 Select "MouseEvents" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![GitHub Logo](../../../../docs/Pictures/MouseEvents.png)
+![GitHub Logo](../../../docs/Pictures/MouseEvents.png)

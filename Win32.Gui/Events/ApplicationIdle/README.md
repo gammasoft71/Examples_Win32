@@ -2,13 +2,13 @@
 
 This example demonstrates the use of Idle message.
 
-# Source
+## Sources
 
 [ApplicationIdle.cpp](ApplicationIdle.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start ApplicationIdle.sln
 
 Select "ApplicationIdle" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![GitHub Logo](../../../../docs/Pictures/ApplicationIdle.png)
+![GitHub Logo](../../../docs/Pictures/ApplicationIdle.png)
