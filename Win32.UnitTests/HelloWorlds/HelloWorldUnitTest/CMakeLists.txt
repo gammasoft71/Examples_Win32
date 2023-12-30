@@ -7,4 +7,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_definitions(-DUNICODE)
 
 add_library(HelloWorldUnitTest SHARED HelloWorldTest.cpp)
-set_target_properties(HelloWorldUnitTest PROPERTIES FOLDER Win32.UnitTests/HelloWorldsUnitTests)
+set_target_properties(HelloWorldUnitTest PROPERTIES FOLDER Win32.UnitTests/HelloWorlds)
