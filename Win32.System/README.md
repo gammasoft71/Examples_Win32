@@ -11,8 +11,16 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) S
 
 ## [Console](Console/README.md)
 
-* [Console](Console/Console/README.md) Shows how to use Win32 Console.
-* [ConsoleColor](Console/ConsoleColor/README.md) Shows how to use colors with Win32 Console.
+* [Console](Console/Console/README.md) shows how to use Win32 Console.
+* [ConsoleColor](Console/ConsoleColor/README.md) shows how to use colors with Win32 Console.
+
+## [Processes](Processes/README.md)
+
+* [Process](Processes/Process/README.md) demonstrates the use of CreateProcess function.
+
+## [Others](Others/README.md)
+
+* [StringConversion](Others/StringConversion/README.md) demonstrates the use of std::wcstombs and std::mbstowcs functions.
 
 ## Generate and build
 
