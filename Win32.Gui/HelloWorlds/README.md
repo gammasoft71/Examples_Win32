@@ -2,11 +2,11 @@
 
 [This folder](.) contains Win32 controls "Hello, World!" examples.
 
-* [HelloWorldEmoticons](HelloWorlds/HelloWorldEmoticons/README.md) The classic first application HelloWorld width emoticons.
-* [HelloWorldMessageBox](HelloWorlds/HelloWorldMessageBox/README.md) The classic first application HelloWorld with MessageBox.
-* [HelloWorldMessageBox2](HelloWorlds/HelloWorldMessageBox2/README.md) The classic first application HelloWorld with MessageBox.
-* [HelloWorldPaint](HelloWorlds/HelloWorldPaint/README.md) The classic first application HelloWorld with GDI+ drawing objects.
-* [HelloWorldStaticText](HelloWorlds/HelloWorldStaticText/README.md) The classic first application HelloWorld with StaticText control.
+* [HelloWorldEmoticons](HelloWorldEmoticons/README.md) The classic first application HelloWorld width emoticons.
+* [HelloWorldMessageBox](HelloWorldMessageBox/README.md) The classic first application HelloWorld with MessageBox.
+* [HelloWorldMessageBox2](HelloWorldMessageBox2/README.md) The classic first application HelloWorld with MessageBox.
+* [HelloWorldPaint](HelloWorldPaint/README.md) The classic first application HelloWorld with GDI+ drawing objects.
+* [HelloWorldStaticText](HelloWorldStaticText/README.md) The classic first application HelloWorld with StaticText control.
 
 ## Generate and build
 
