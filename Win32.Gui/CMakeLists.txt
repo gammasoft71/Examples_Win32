@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(Win32.Gui.Examples)
+project(Win32.Gui)
 
 add_subdirectory(HelloWorlds)
 add_subdirectory(Applications)
