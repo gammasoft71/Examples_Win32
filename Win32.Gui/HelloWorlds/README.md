@@ -1,11 +1,5 @@
 ﻿
-# Win32.Gui Examples
-
-Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) controls by proghramming code ([c++17](https://en.cppreference.com/w/)).
-
-[![win32](../docs/Pictures/win32_header.png)](https://gammasoft71.wixsite.com/gammasoft/win32)
-
-## Hello Worlds
+# HelloWorlds
 
 * [HelloWorldEmoticons](HelloWorlds/HelloWorldEmoticons/README.md) The classic first application HelloWorld width emoticons.
 * [HelloWorldMessageBox](HelloWorlds/HelloWorldMessageBox/README.md) The classic first application HelloWorld with MessageBox.
