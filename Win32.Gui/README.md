@@ -24,7 +24,7 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) c
 * [FindDialog](Dialogs/FindDialog/README.md) Shows how to create a FindDialog.
 * [FolderBrowserDialog](Dialogs/FolderBrowserDialog/README.md) Shows how to create a FolderBrowserDialog.
 * [FontDialog](Dialogs/FontDialog/README.md) Shows how to create a FontDialog.
-* [MessageBox](Dialogs/MessageBox/README.md) Shows how to create a MessageBox.
+* [MessageBox](Dialogs/MessageBox/README.md) Shows how to create a MessageBox with [MessageBox](https://learn.microsoft.com/windows/win32/api/winuser/nf-winuser-messagebox) function.
 * [OpenFileDialog](Dialogs/OpenFileDialog/README.md) Shows how to create an OpenFileDialog.
 * [PageSetupDialog](Dialogs/PageSetupDialog/README.md) Shows how to create a PageSetupDialog.
 * [PrintDialog](Dialogs/PrintDialog/README.md) Shows how to create a PrintDialog.

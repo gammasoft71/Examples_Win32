@@ -1,6 +1,6 @@
 # MessageBox
 
-This example demonstrates the use of MessageBox dialog.
+This example demonstrates the use of MessageBox dialog with [MessageBox](https://learn.microsoft.com/windows/win32/api/winuser/nf-winuser-messagebox) function.
 
 ## Sources
 
