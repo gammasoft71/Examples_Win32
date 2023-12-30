@@ -22,4 +22,4 @@ Open "Test/Test Explorer" with Ctrl+E,t, select "HelloWorldRTest" test and type 
 
 # Output
 
-![Screenshot](../../docs/Pictures/HelloWorldTest.png)
+![Screenshot](../../../docs/Pictures/HelloWorldTest.png)
