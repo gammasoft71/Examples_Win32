@@ -11,8 +11,8 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) S
 
 ## [Console](Console/README.md)
 
-* [Console](Console/Console/README.md) shows how to use Win32 Console.
-* [ConsoleColor](Console/ConsoleColor/README.md) shows how to use colors with Win32 Console.
+* [Console](Console/Console/README.md) demonstrates the use of [WriteConsole](https://learn.microsoft.com/windows/console/writeconsole) and [ReadConsole](https://learn.microsoft.com/windows/console/readconsole) functions.
+* [ConsoleColor](Console/ConsoleColor/README.md) demonstrates the use of [WriteConsole](https://learn.microsoft.com/windows/console/writeconsole) and [SetConsoleTextAttribute](https://learn.microsoft.com/windows/console/setconsoletextattribute) functions.
 
 ## [Processes](Processes/README.md)
 
