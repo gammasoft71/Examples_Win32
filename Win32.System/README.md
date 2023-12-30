@@ -5,7 +5,7 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) S
 
 [![win32](../docs/Pictures/win32_header.png)](https://gammasoft71.wixsite.com/gammasoft/win32)
 
-## [Hello World]((HelloWorlds/README.md))
+## [Hello World](HelloWorlds/README.md)
 
 * [HelloWorld](HelloWorlds/HelloWorld/README.md) The classic first application "Hello, World!" with Win32 [WriteConsole](https://learn.microsoft.com/windows/console/writeconsole) function.
 
