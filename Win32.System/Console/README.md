@@ -3,7 +3,7 @@
 
 [This folder](.) contains Win32 console examples.
 
-* [Console](Console/README.md) shows how to use Win32 Console.
+* [Console](Console/README.md) demonstrates the use of [WriteConsole](https://learn.microsoft.com/windows/console/writeconsole) and [ReadConsole](https://learn.microsoft.com/windows/console/readconsole) functions.
 * [ConsoleColor](ConsoleColor/README.md) shows how to use colors with Win32 Console.
 
 ## Generate and build
