@@ -16,7 +16,7 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) S
 
 ## [Processes](Processes/README.md)
 
-* [Process](Processes/Process/README.md) demonstrates the use of CreateProcess function.
+* [Process](Processes/Process/README.md) demonstrates the use of [CreateProcess](https://learn.microsoft.com/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw) function.
 
 ## [Others](Others/README.md)
 
@@ -33,7 +33,3 @@ start Win32.Gui.Examples.sln
 ```
 
 Select any project and type Ctrl+F5 to build and run it.
-
-## Remarks
-
-This project run only on Windows with [Visual Studio](https://www.visualstudio.com) and [CMake](https://cmake.org).

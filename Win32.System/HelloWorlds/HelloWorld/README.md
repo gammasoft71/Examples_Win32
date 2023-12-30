@@ -4,9 +4,9 @@ The classic first application "Hello, World!" with Win32 [WriteConsole](https://
 
 ## Source
 
-[HelloWorld.cpp](./HelloWorld.cpp)
+[HelloWorld.cpp](HelloWorld.cpp)
 
-[CMakeLists.txt](./CMakeLists.txt)
+[CMakeLists.txt](CMakeLists.txt)
 
 ## Generate and build
 

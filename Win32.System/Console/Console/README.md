@@ -4,9 +4,9 @@ This example demonstrates the use of [WriteConsole](https://learn.microsoft.com/
 
 ## Source
 
-[Console.cpp](./Console.cpp)
+[Console.cpp](Console.cpp)
 
-[CMakeLists.txt](./CMakeLists.txt)
+[CMakeLists.txt](CMakeLists.txt)
 
 ## Generate and build
 
