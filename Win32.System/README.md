@@ -5,14 +5,14 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) S
 
 [![win32](../../docs/Pictures/win32_header.png)](https://gammasoft71.wixsite.com/gammasoft/win32)
 
-## Hello World
+## [Hello World]((HelloWorlds/README.md))
 
-* [HelloWorld](HelloWorld/README.md) The classic first application HelloWorld.
+* [HelloWorld](HelloWorlds/HelloWorld/README.md) The classic first application "Hello, World!" with xtd::console class.
 
-## Console
+## [Console](Console/README.md)
 
-* [Console](Console/README.md) Shows how to use Window Console.
-* [ConsoleColor](ConsoleColor/README.md) Shows how to use colors with Window Console.
+* [Console](Console/Console/README.md) Shows how to use Win32 Console.
+* [ConsoleColor](Console/ConsoleColor/README.md) Shows how to use colors with Win32 Console.
 
 ## Generate and build
 
