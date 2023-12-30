@@ -17,7 +17,3 @@ start Console.sln
 ```
 
 Select any project and type Ctrl+F5 to build and run it.
-
-## Remarks
-
-This project run only on Windows with [Visual Studio](https://www.visualstudio.com) and [CMake](https://cmake.org).
