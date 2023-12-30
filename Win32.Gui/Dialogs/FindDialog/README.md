@@ -2,13 +2,13 @@
 
 This example demonstrates the use of FindDialog dialog.
 
-# Source
+## Sources
 
 [FindDialog.cpp](FindDialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start FindDialog.sln
 
 Select "FindDialog" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Screenshot](../../../../docs/Pictures/FindDialog.png)
+![Screenshot](../../../docs/Pictures/FindDialog.png)

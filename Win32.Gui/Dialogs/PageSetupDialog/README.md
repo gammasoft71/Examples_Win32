@@ -2,13 +2,13 @@
 
 This example demonstrates the use of PageSetupDialog dialog.
 
-# Source
+## Sources
 
 [PageSetupDialog.cpp](PageSetupDialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start PageSetupDialog.sln
 
 Select "PageSetupDialog" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Screenshot](../../../../docs/Pictures/PageSetupDialog.png)
+![Screenshot](../../../docs/Pictures/PageSetupDialog.png)

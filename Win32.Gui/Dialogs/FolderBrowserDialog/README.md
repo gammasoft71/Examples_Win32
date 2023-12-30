@@ -2,13 +2,13 @@
 
 This example demonstrates the use of FolderBrowserDialog dialog.
 
-# Source
+## Sources
 
 [FolderBrowserDialog.cpp](FolderBrowserDialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start FolderBrowserDialog.sln
 
 Select "FolderBrowserDialog" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Screenshot](../../../../docs/Pictures/FolderBrowserDialog.png)
+![Screenshot](../../../docs/Pictures/FolderBrowserDialog.png)

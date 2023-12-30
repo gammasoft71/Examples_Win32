@@ -2,13 +2,13 @@
 
 This example demonstrates the use of SaveFileDialog dialog.
 
-# Source
+## Sources
 
 [SaveFileDialog.cpp](SaveFileDialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start SaveFileDialog.sln
 
 Select "SaveFileDialog" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Screenshot](../../../../docs/Pictures/SaveFileDialog.png)
+![Screenshot](../../../docs/Pictures/SaveFileDialog.png)

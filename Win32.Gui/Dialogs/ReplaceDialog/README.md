@@ -2,13 +2,13 @@
 
 This example demonstrates the use of ReplaceDialog dialog.
 
-# Source
+## Sources
 
 [ReplaceDialog.cpp](ReplaceDialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start ReplaceDialog.sln
 
 Select "ReplaceDialog" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Screenshot](../../../../docs/Pictures/ReplaceDialog.png)
+![Screenshot](../../../docs/Pictures/ReplaceDialog.png)

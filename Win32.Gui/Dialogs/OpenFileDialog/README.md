@@ -2,13 +2,13 @@
 
 This example demonstrates the use of OpenFileDialog dialog.
 
-# Source
+## Sources
 
 [OpenFileDialog.cpp](OpenFileDialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start OpenFileDialog.sln
 
 Select "OpenFileDialog" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Screenshot](../../../../docs/Pictures/OpenFileDialog.png)
+![Screenshot](../../../docs/Pictures/OpenFileDialog.png)

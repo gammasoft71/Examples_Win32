@@ -2,13 +2,13 @@
 
 This example demonstrates the use of ColorDialog dialog.
 
-# Source
+## Sources
 
 [ColorDialog.cpp](ColorDialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start ColorDialog.sln
 
 Select "ColorDialog" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Screenshot](../../../../docs/Pictures/ColorDialog.png)
+![Screenshot](../../../docs/Pictures/ColorDialog.png)
