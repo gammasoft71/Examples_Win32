@@ -2,7 +2,7 @@
 
 [This folder](.) contains dialogs examples.
 
-* [AboutBox](AboutBox/README.md) Shows how to create an AboutBox.
+* [AboutBox](AboutBox/README.md) Shows how to create an AboutBox  with [MessageBox](https://learn.microsoft.com/windows/win32/api/winuser/nf-winuser-messagebox) function.
 * [ColorDialog](ColorDialog/README.md) Shows how to create a ColorDialog.
 * [FindDialog](FindDialog/README.md) Shows how to create a FindDialog.
 * [FolderBrowserDialog](FolderBrowserDialog/README.md) Shows how to create a FolderBrowserDialog.

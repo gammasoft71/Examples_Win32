@@ -19,7 +19,7 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) c
 
 ## [Dialogs](Dialogs/README.md)
 
-* [AboutBox](Dialogs/AboutBox/README.md) Shows how to create an AboutBox.
+* [AboutBox](Dialogs/AboutBox/README.md) Shows how to create an AboutBox with [MessageBox](https://learn.microsoft.com/windows/win32/api/winuser/nf-winuser-messagebox) function.
 * [ColorDialog](Dialogs/ColorDialog/README.md) Shows how to create a ColorDialog.
 * [FindDialog](Dialogs/FindDialog/README.md) Shows how to create a FindDialog.
 * [FolderBrowserDialog](Dialogs/FolderBrowserDialog/README.md) Shows how to create a FolderBrowserDialog.
