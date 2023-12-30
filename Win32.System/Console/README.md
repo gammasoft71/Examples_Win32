@@ -1,4 +1,3 @@
-
 # Console
 
 [This folder](.) contains Win32 console examples.

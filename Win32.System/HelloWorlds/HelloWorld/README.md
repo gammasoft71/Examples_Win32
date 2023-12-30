@@ -2,7 +2,7 @@
 
 The classic first application "Hello, World!" with Win32 [WriteConsole](https://learn.microsoft.com/windows/console/writeconsole) function.
 
-## Source
+## Sources
 
 [HelloWorld.cpp](HelloWorld.cpp)
 

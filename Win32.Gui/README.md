@@ -1,5 +1,4 @@
-﻿
-# Win32.Gui Examples
+﻿# Win32.Gui Examples
 
 Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) controls by proghramming code ([c++17](https://en.cppreference.com/w/)).
 
@@ -85,13 +84,7 @@ To build this project, open "Console" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start Win32.Gui.Examples.sln
+start Win32.Gui.sln
 ```
 
 Select any project and type Ctrl+F5 to build and run it.
-
-## Remarks
-
-This project run only on Windows with [Visual Studio](https://www.visualstudio.com) and [CMake](https://cmake.org).
-
-See [Desktop App User Interface](https://docs.microsoft.com/en-us/windows/win32/windows-application-ui-development) for more informations.

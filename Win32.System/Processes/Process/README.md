@@ -2,7 +2,7 @@
 
 This example demonstrates the use of [CreateProcess](https://learn.microsoft.com/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw) function.
 
-## Source
+## Sources
 
 [Process.cpp](Process.cpp)
 
