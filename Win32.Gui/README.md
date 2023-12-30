@@ -4,7 +4,7 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) c
 
 [![win32](../docs/Pictures/win32_header.png)](https://gammasoft71.wixsite.com/gammasoft/win32)
 
-## Hello Worlds
+## [Hello Worlds](HelloWorlds/README.md)
 
 * [HelloWorldEmoticons](HelloWorlds/HelloWorldEmoticons/README.md) The classic first application HelloWorld width emoticons.
 * [HelloWorldMessageBox](HelloWorlds/HelloWorldMessageBox/README.md) The classic first application HelloWorld with MessageBox.
@@ -12,12 +12,12 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) c
 * [HelloWorldPaint](HelloWorlds/HelloWorldPaint/README.md) The classic first application HelloWorld with GDI+ drawing objects.
 * [HelloWorldStaticText](HelloWorlds/HelloWorldStaticText/README.md) The classic first application HelloWorld with StaticText control.
 
-## Applications
+## [Applications](Applications/README.md)
 
 * [Application](Applications/Application/README.md) Shows how to create an Application.
 * [ApplicationIcon](Applications/ApplicationIcon/README.md) Shows how to create an executable with icon.
 
-## Dialogs
+## [Dialogs](Dialogs/README.md)
 
 * [AboutBox](Dialogs/AboutBox/README.md) Shows how to create an AboutBox.
 * [ColorDialog](Dialogs/ColorDialog/README.md) Shows how to create a ColorDialog.
@@ -31,22 +31,22 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) c
 * [ReplaceDialog](Dialogs/ReplaceDialog/README.md) Shows how to create a ReplaceDialog.
 * [SaveFileDialog](Dialogs/SaveFileDialog/README.md) Shows how to create a SaveFileDialog.
 
-## Windows
+## [Windows](Windows/README.md)
 
 * [Window](Windows/Window/README.md) Shows how to create a Window.
 
-## Menus and toolbars
+## [Menus and toolbars](MenusAndToolbars/README.md)
 
 * [MainMenu](MenusAndToolbars/MainMenu/README.md) Shows how to create a MainMenu.
 * [Toolbar](MenusAndToolbars/Toolbar/README.md) Shows how to create a Toolbar.
 
-## Containers
+## [Containers](Containers/README.md)
 
 * [GroupBox](Containers/GroupBox/README.md) Shows how to create a GroupBox.
 * [Panel](Containers/Panel/README.md) Shows how to create a Panel.
 * [TabControl](Containers/TabControl/README.md) Shows how to create a TabControl.
 
-## Controls
+## [Controls](Controls/README.md)
 
 * [Button](Controls/Button/README.md) Shows how to create a Button and Event Click.
 * [CheckBox](Controls/CheckBox/README.md) Shows how to create a CheckBox.
@@ -58,17 +58,17 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) c
 * [TextBox](Controls/TextBox/README.md) Shows how to create a TextBox.
 * [TrackBar](Controls/TrackBar/README.md) Shows how to create a TrackBar.
 
-## Components
+## [Components](Components/README.md)
 
 * [Timer](Components/Timer/README.md) Shows how to create a Timer.
 
-## Events
+## [Events](Events/README.md)
 
 * [ApplicationIdle](Events/ApplicationIdle/README.md) Shows how to create an Application and Idle event.
 * [KeyEvents](Events/KeyEvents/README.md) demonstrates the use of key events.
 * [MouseEvents](Events/MouseEvents/README.md) demonstrates the use of mouse events.
 
-## Other
+## [Others](Others/README.md)
 
 * [ColoredTabPages](Others/Others/ColoredTabPages/README.md) Shows how to create a TabControl with colored TabPages with.
 * [GroupBoxAndCheckBox](Others/GroupBoxAndCheckBox/README.md) demonstrates the use of GroupBox container and CheckBox control.
