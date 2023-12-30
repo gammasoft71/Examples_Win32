@@ -2,13 +2,13 @@
 
 This example demonstrates the use of TabControl conainer.
 
-# Source
+## Source
 
 [TabControl.cpp](TabControl.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start TabControl.sln
 
 Select "TabControl" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Screenshot](../../../../docs/Pictures/TabControl.png)
+![Screenshot](../../../docs/Pictures/TabControl.png)

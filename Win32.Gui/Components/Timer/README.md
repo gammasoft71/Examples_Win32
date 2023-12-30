@@ -2,7 +2,7 @@
 
 This example demonstrates the use of Timer componant.
 
-## Source
+## Sources
 
 [Timer.cpp](Timer.cpp)
 

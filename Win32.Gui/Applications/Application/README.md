@@ -2,7 +2,7 @@
 
 This example demonstrates the use of GetMessage and DispatchMessage loop.
 
-## Source
+## Sources
 
 [Application.cpp](Application.cpp)
 

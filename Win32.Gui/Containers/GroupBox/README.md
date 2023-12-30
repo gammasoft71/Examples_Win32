@@ -2,13 +2,13 @@
 
 This example demonstrates the use of GroupBox container.
 
-# Source
+## Sources
 
 [GroupBox.cpp](GroupBox.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start GroupBox.sln
 
 Select "GroupBox" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Screenshot](../../../../docs/Pictures/GroupBox.png)
+![Screenshot](../../../docs/Pictures/GroupBox.png)
