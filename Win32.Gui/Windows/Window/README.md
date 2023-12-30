@@ -2,13 +2,13 @@
 
 This example demonstrates the use of Window window.
 
-# Source
+## Sources
 
 [Window.cpp](Window.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start Window.sln
 
 Select "Window" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Screenshot](../../../../docs/Pictures/Window.png)
+![Screenshot](../../../docs/Pictures/Window.png)
