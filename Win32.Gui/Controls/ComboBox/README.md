@@ -2,13 +2,13 @@
 
 This example demonstrates the use of ComboBox control.
 
-# Source
+## Sources
 
 [ComboBox.cpp](ComboBox.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start ComboBox.sln
 
 Select "ComboBox" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Picture](../../../../docs/Pictures/ComboBox.png)
+![Picture](../../../docs/Pictures/ComboBox.png)

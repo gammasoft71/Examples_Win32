@@ -2,7 +2,7 @@
 
 This example demonstrates the use of TabControl conainer.
 
-## Source
+## Sources
 
 [TabControl.cpp](TabControl.cpp)
 

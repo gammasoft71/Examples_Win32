@@ -2,13 +2,13 @@
 
 This example demonstrates the use of RadioButton control.
 
-# Source
+## Sourcea
 
 [RadioButton.cpp](RadioButton.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start RadioButton.sln
 
 Select "RadioButton" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Screenshot](../../../../docs/Pictures/RadioButton.png)
+![Screenshot](../../../docs/Pictures/RadioButton.png)

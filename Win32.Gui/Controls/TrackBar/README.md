@@ -2,13 +2,13 @@
 
 This example demonstrates the use of TrackBar control.
 
-# Source
+## Sources
 
 [TrackBar.cpp](TrackBar.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start TrackBar.sln
 
 Select "TrackBar" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Screenshot](../../../../docs/Pictures/TrackBar.png)
+![Screenshot](../../../docs/Pictures/TrackBar.png)

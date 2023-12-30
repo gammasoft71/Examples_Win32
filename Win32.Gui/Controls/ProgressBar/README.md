@@ -2,13 +2,13 @@
 
 This example demonstrates the use of ProgressBar control.
 
-# Source
+## Sources
 
 [ProgressBar.cpp](ProgressBar.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -20,6 +20,6 @@ start ProgressBar.sln
 
 Select "ProgressBar" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Screenshot](../../../../docs/Pictures/ProgressBar.png)
+![Screenshot](../../../docs/Pictures/ProgressBar.png)
