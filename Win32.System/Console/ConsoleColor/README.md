@@ -1,6 +1,6 @@
 # ConsoleColor
 
-This example demonstrates the use of WriteConsole and SetConsoleTextAttribute functions.
+This example demonstrates the use of [WriteConsole](https://learn.microsoft.com/windows/console/writeconsole) and [SetConsoleTextAttribute](https://learn.microsoft.com/windows/console/setconsoletextattribute) functions.
 
 # Source
 
