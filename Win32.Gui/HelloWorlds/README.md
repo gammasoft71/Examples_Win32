@@ -1,5 +1,6 @@
-﻿
-# Hello Worlds
+﻿# Hello Worlds
+
+[This folder](.) contains Win32 controls "Hello, World!" examples.
 
 * [HelloWorldEmoticons](HelloWorlds/HelloWorldEmoticons/README.md) The classic first application HelloWorld width emoticons.
 * [HelloWorldMessageBox](HelloWorlds/HelloWorldMessageBox/README.md) The classic first application HelloWorld with MessageBox.
@@ -22,5 +23,3 @@ Select any project and type Ctrl+F5 to build and run it.
 ## Remarks
 
 This project run only on Windows with [Visual Studio](https://www.visualstudio.com) and [CMake](https://cmake.org).
-
-See [Desktop App User Interface](https://docs.microsoft.com/en-us/windows/win32/windows-application-ui-development) for more informations.
