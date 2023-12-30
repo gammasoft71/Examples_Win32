@@ -7,7 +7,7 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) S
 
 ## [Hello World]((HelloWorlds/README.md))
 
-* [HelloWorld](HelloWorlds/HelloWorld/README.md) The classic first application "Hello, World!" with xtd::console class.
+* [HelloWorld](HelloWorlds/HelloWorld/README.md) The classic first application "Hello, World!" with Win32 [WriteConsole](https://learn.microsoft.com/windows/console/writeconsole) function.
 
 ## [Console](Console/README.md)
 
