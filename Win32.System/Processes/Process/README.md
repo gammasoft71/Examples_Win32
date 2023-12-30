@@ -18,7 +18,7 @@ cmake ..
 start Process.sln
 ```
 
-Select any project and type Ctrl+F5 to build and run it.
+Select "Process" project and type Ctrl+F5 to build and run it.
 
 ## Output
 

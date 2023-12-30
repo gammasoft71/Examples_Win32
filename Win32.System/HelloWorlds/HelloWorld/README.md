@@ -18,7 +18,7 @@ cmake ..
 start HelloWorld.sln
 ```
 
-Select any project and type Ctrl+F5 to build and run it.
+Select "HelloWorld" project and type Ctrl+F5 to build and run it.
 
 ## Output
 

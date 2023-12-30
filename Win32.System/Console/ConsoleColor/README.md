@@ -15,10 +15,10 @@ To build this project, open "Console" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start Console.sln
+start ConsoleColor.sln
 ```
 
-Select any project and type Ctrl+F5 to build and run it.
+Select "ConsoleColor" project and type Ctrl+F5 to build and run it.
 
 ## Output
 

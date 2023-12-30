@@ -18,6 +18,8 @@ cmake ..
 start StringConversion.sln
 ```
 
+Select "StringConversion" project and type Ctrl+F5 to build and run it.
+
 ## Output
 
 ```

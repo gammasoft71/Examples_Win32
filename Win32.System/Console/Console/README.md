@@ -18,6 +18,8 @@ cmake ..
 start Console.sln
 ```
 
+Select "Console" project and type Ctrl+F5 to build and run it.
+
 ## Output
 
 ```

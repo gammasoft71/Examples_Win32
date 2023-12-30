@@ -2,13 +2,13 @@
 
 The classic first application HelloWorld width Cpp Unit Test Framework
 
-# Source
+## Sources
 
 [HelloWorldTest.cpp](./HelloWorldTest.cpp)
 
 [CMakeLists.txt](./CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
