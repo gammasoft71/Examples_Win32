@@ -22,11 +22,11 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) a
 * [Applications](Win32.Gui/Applications/README.md) contains application examples.
 * [Dialogs](Win32.Gui/Dialogs/README.md) contains dialog examples.
 * [Windows](Win32.Gui/Windows/README.md) contains windows examples.
-* [MenusAndToolbars](Win32.Gui/MenusAndToolbars/README.md) contains dialog examples.
+* [MenusAndToolbars](Win32.Gui/MenusAndToolbars/README.md) contains menus and toolbars examples.
 * [Containers](Win32.Gui/Containers/README.md) contains containers examples.
 * [Controls](Win32.Gui/Controls/README.md) contains common controls examples.
 * [Components](Win32.Gui/Components/README.md) contains components examples.
-* [Events](Win32.Gui/Evnets/README.md) contains evenrs examples.
+* [Events](Win32.Gui/Evnets/README.md) contains events examples.
 * [Others](Win32.Gui/Others/README.md) contains others examples.
 
 ## [Win32.UnitTests](Win32.UnitTests/README.md)
@@ -56,9 +56,4 @@ Select any project and type Ctrl+F5 to build and run it.
 
 This project run only on Windows with [Visual Studio](https://www.visualstudio.com) and [CMake](https://cmake.org).
 
-
-
-
-
-
-
+See [Desktop App User Interface](https://docs.microsoft.com/en-us/windows/win32/windows-application-ui-development) for more informations.
