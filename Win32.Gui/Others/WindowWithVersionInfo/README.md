@@ -2,7 +2,7 @@
 
 This example demonstrates the use of Form control and version informations.
 
-# Source
+## Sources
 
 [WindowWithVersionInfo.cpp](WindowWithVersionInfo.cpp)
 
@@ -10,7 +10,7 @@ This example demonstrates the use of Form control and version informations.
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Generate and build
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -22,6 +22,6 @@ start WindowWithVersionInfo.sln
 
 Select "WindowWithVersionInfo" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Screenshot](../../../../docs/Pictures/WindowWithVersionInfo.png)
+![Screenshot](../../../docs/Pictures/WindowWithVersionInfo.png)

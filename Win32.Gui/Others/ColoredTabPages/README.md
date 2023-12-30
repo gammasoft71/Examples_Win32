@@ -2,12 +2,13 @@
 
 This example demonstrates the use of TabControl and TabPage with colors.
 
-# Sources
+## Sources
 
 [ColoredTabPages.cpp](ColoredTabPages.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
-# Generate and build
+
+## Generate and build
 
 To build this project, open "Console" and type following lines:
 
@@ -19,6 +20,6 @@ start ColoredTabPages.sln
 
 Select "ColoredTabPages" project and type Ctrl+F5 to build and run it.
 
-# Output
+## Output
 
-![Screenshot](../../../../docs/Pictures/ColoredTabPages.png)
+![Screenshot](../../../docs/Pictures/ColoredTabPages.png)
