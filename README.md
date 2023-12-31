@@ -31,7 +31,7 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) a
 
 ## [Win32.UnitTests](Win32.UnitTests/README.md)
 
-* [HelloWorlds](Win32.UnitTests/HelloWorldsUnitTests/README.md) contains Win32 unit test "Hello, World!" examples.
+* [HelloWorlds](Win32.UnitTests/HelloWorlds/README.md) contains Win32 unit test "Hello, World!" examples.
 
 ## Download
 
