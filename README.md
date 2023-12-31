@@ -36,7 +36,7 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) a
 ## Download
 
 ``` shell
-git clone https://github.com/gammasoft71/Win32Examples Win32Examples
+git clone https://github.com/gammasoft71/Examples_Win32 Examples_Win32
 ```
 
 ## Generate and build
