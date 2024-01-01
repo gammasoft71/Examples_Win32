@@ -54,6 +54,6 @@ Select any project and type Ctrl+F5 to build and run it.
 
 ## Remarks
 
-This project run only on Windows with [Visual Studio](https://www.visualstudio.com) and [CMake](https://cmake.org).
+This project run only on Windows with [Visual Studio](https://www.visualstudio.com) 2019 or above and [CMake](https://cmake.org).
 
 See [Desktop App User Interface](https://docs.microsoft.com/en-us/windows/win32/windows-application-ui-development) for more informations.
