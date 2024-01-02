@@ -26,7 +26,7 @@ Shows how to use [Win32](https://learn.microsoft.com/en-us/windows/win32/api/) a
 * [Containers](Win32.Gui/Containers/README.md) contains containers examples.
 * [Controls](Win32.Gui/Controls/README.md) contains common controls examples.
 * [Components](Win32.Gui/Components/README.md) contains components examples.
-* [Events](Win32.Gui/Evnets/README.md) contains events examples.
+* [Events](Win32.Gui/Events/README.md) contains events examples.
 * [Others](Win32.Gui/Others/README.md) contains others examples.
 
 ## [Win32.UnitTests](Win32.UnitTests/README.md)
