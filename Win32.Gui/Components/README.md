@@ -2,7 +2,7 @@
 
 [This folder](.) contains components examples.
 
-* [Timer](/Timer/README.md) Shows how to create a Timer.
+* [Timer](Timer/README.md) Shows how to create a Timer.
 
 ## Generate and build
 
