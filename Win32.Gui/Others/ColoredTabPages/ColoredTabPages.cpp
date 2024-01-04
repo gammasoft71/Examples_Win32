@@ -31,32 +31,25 @@ LRESULT OnWindowNotify(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   for (size_t index = 0; index < tabPages.size(); index++) {
     size_t currentPageIndex = SendMessage(tabControl1, TCM_GETCURSEL, 0, 0);
     ShowWindow(tabPages[index].panel, index == currentPageIndex ? SW_SHOW : SW_HIDE);
-    if (index == currentPageIndex) {
-      RECT rect;
-      GetClientRect(tabPages[index].panel, &rect);
-      InvalidateRect(tabPages[index].panel, &rect, true);
-    }
+    SendMessage(window, WM_ERASEBKGND, reinterpret_cast<WPARAM>(window), 0);
   }
-  RECT rect;
-  GetClientRect(window, &rect);
-  InvalidateRect(window, &rect, true);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
-LRESULT OnPaint(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-  for (auto& tabPage : tabPages)
-    /*if (hwnd == tabPages[0].panel)*/ {
-      RECT rect;
-      GetClientRect(tabPage.panel, &rect);
-      FillRect(GetDC(tabPage.panel), &rect, tabPage.backBrush);
-    }
-return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
+LRESULT OnEraseBackground(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  for (size_t index = 0; index < tabPages.size(); ++index) {
+    RECT rect;
+    GetClientRect(tabPages[index].panel, &rect);
+    FillRect(GetDC(tabPages[index].panel), &rect, tabPages[index].backBrush);
+  }
+  return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   if (message == WM_CLOSE && hwnd == window) return OnWindowClose(hwnd, message, wParam, lParam);
   if (message == WM_NOTIFY) return OnWindowNotify(hwnd, message, wParam, lParam);
-  if (message == WM_PAINT) return OnPaint(hwnd, message, wParam, lParam);
+  if (message == WM_ERASEBKGND) return OnEraseBackground(hwnd, message, wParam, lParam);
+  if (message == WM_ACTIVATE) SendMessage(window, WM_ERASEBKGND, reinterpret_cast<WPARAM>(window), 0);
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
 
@@ -67,17 +60,19 @@ int main() {
     tabPages[index].text = tabPageNames[index];
     tabPages[index].backBrush = CreateSolidBrush(tabPagesColors[index]);
     tabPages[index].tabControlItem.mask = TCIF_TEXT;
-    tabPages[index].tabControlItem.pszText = (LPWSTR)tabPages[index].text.c_str();
+    tabPages[index].tabControlItem.pszText = const_cast<LPWSTR>(tabPages[index].text.c_str());
     TabCtrl_InsertItem(tabControl1, TabCtrl_GetItemCount(tabControl1), &tabPages[index].tabControlItem);
     RECT tabPageRectangle{ 0, 0, 370, 250 };
-    SendMessage(tabControl1, TCM_ADJUSTRECT, false, (LPARAM)&tabPageRectangle);
+    SendMessage(tabControl1, TCM_ADJUSTRECT, false, reinterpret_cast<LPARAM>(&tabPageRectangle));
     tabPages[index].panel = CreateWindowEx(0, WC_DIALOG, nullptr, WS_CHILD | WS_CLIPSIBLINGS | WS_VISIBLE, tabPageRectangle.left, tabPageRectangle.top, tabPageRectangle.right - tabPageRectangle.left, tabPageRectangle.bottom - tabPageRectangle.top, tabControl1, nullptr, nullptr, nullptr);
     SetBkColor(GetDC(tabPages[index].panel), tabPagesColors[index]);
   }
+  TabCtrl_SetCurSel(tabControl1, -1);
 
-  defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
+  defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc));
 
   ShowWindow(window, SW_SHOW);
+  TabCtrl_SetCurSel(tabControl1, 0);
 
   MSG message = { 0 };
   while (GetMessage(&message, nullptr, 0, 0))
