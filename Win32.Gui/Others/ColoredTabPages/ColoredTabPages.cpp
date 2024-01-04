@@ -55,7 +55,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 
 int main() {
   window = CreateWindowEx(0, WC_DIALOG, L"TabControl example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 406, 316, nullptr, nullptr, nullptr, nullptr);
-  tabControl1 = CreateWindowEx(0, WC_TABCONTROL, nullptr, WS_CHILD | WS_VISIBLE, 10, 10, 370, 250, window, nullptr, nullptr, nullptr);
+  tabControl1 = CreateWindowEx(0, WC_TABCONTROL, nullptr, WS_CHILD | WS_VISIBLE | TCS_BOTTOM, 10, 10, 370, 250, window, nullptr, nullptr, nullptr);
   for (size_t index = 0; index < tabPages.size(); index++) {
     tabPages[index].text = tabPageNames[index];
     tabPages[index].backBrush = CreateSolidBrush(tabPagesColors[index]);
